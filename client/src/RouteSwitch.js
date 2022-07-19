@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React from 'react';
 import App from "./components/App";
 import TestSecondRouter from "./components/TestSecondRouter";
+import NotFound from "./components/NotFound";
 
 const RouteSwitch = () => {
     return (
@@ -9,6 +10,7 @@ const RouteSwitch = () => {
             <Routes>
                 <Route path='/' element={<App />} />
                 <Route path='/create' element={<TestSecondRouter />} />
+                <Route path='*' element={<NotFound />}/>
             </Routes>
         </BrowserRouter>
     )
