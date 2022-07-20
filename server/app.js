@@ -5,7 +5,9 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 require('dotenv').config();
 
-const userRouter = require('./routes/users');
+const usersRouter = require('./routes/users');
+const postsRouter = require('./routes/posts');
+const commentsRouter = require('./routes/posts');
 
 const app = express();
 
@@ -15,7 +17,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../client/build')));
 
-app.use('/api/user', userRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/posts', postsRouter);
+app.use('/api/posts/:postid/comments', commentsRouter);
+
 app.get('*', (req, res, next) => {
     res.sendFile(path.resolve(__dirname, "../client/build", "index.html"))
 });
