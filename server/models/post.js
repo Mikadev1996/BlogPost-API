@@ -7,7 +7,12 @@ const PostSchema = new Schema({
     timestamp: {type: Date, required: true},
     user: {type: Schema.Types.ObjectId, ref:'User', required: true},
     published: {type: Boolean, required: true, default: false}
-
 })
 
-module.exports = mongoose.model('Message', PostSchema);
+PostSchema
+    .virtual('url')
+    .get(function() {
+        return '/posts' + this._id;
+    });
+
+module.exports = mongoose.model('Post', PostSchema);
