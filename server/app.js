@@ -23,14 +23,15 @@ db.on('error', () => console.error.bind(console, 'MongoDB connection error'));
 
 const app = express();
 
-app.use(cors());
-app.use(compression());
-app.use(helmet());
+const corsOptions = {origin: 'http://localhost:5000'};
+app.use(cors(corsOptions));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(compression());
+app.use(helmet());
 
 app.use(session({ secret: "cats", resave: false, saveUninitialized: true }));
 app.use(passport.initialize());
