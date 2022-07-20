@@ -1,21 +1,41 @@
-
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const session = require('express-session')
+const compression = require('compression');
+const helmet = require('helmet');
+const passport = require('passport');
+const cors = require('cors');
 require('dotenv').config();
+require('./passport');
 
 const usersRouter = require('./routes/users');
 const postsRouter = require('./routes/posts');
 const commentsRouter = require('./routes/posts');
+const mongoose = require("mongoose");
+
+const myMongoDB = process.env.MONGO;
+mongoose.connect(myMongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
+const db = mongoose.connection;
+db.on('error', () => console.error.bind(console, 'MongoDB connection error'));
+
 
 const app = express();
 
+app.use(cors());
+app.use(compression());
+app.use(helmet());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../client/build')));
+
+app.use(session({ secret: "cats", resave: false, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(express.urlencoded({ extended: false }));
 
 app.use('/api/users', usersRouter);
 app.use('/api/posts', postsRouter);

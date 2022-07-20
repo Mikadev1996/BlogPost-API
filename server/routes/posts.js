@@ -16,3 +16,5 @@ router.put('/post/:id/update')
 
 // Delete Post
 router.delete('/post/:id')
+
+module.exports = router;

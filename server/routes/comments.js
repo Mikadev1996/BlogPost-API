@@ -7,3 +7,5 @@ router.get('/')
 
 // Add Comment
 router.post('/')
+
+module.exports = router;
