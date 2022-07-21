@@ -12,10 +12,6 @@ exports.current_user_get = (req, res, next) => {
 }
 
 // Sign Up
-exports.sign_up_get = (req, res, next) => {
-    res.json({msg: "sign up get, not implemented"});
-}
-
 exports.sign_up_post = (req, res, next) => {
     bcrypt.hash(req.body.password, 10, (err, hashedPass) => {
         if (err) return next(err);
@@ -31,12 +27,7 @@ exports.sign_up_post = (req, res, next) => {
     })
 }
 
-
 // Sign In
-exports.sign_in_get = (req, res, next) => {
-    res.json({msg: "Sign in get, not implemented"});
-}
-
 exports.sign_in_post = (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
         if (err || !user) {
