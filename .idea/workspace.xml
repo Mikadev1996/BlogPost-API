@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11122d08-0edf-4565-a3de-8a1118e921f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/Nav.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/styles/Home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/styles/Nav.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/styles/Form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/RouteSwitch.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/RouteSwitch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/SignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SignIn.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/SignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SignUp.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,6 +47,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -79,7 +73,7 @@
       <workItem from="1658262680885" duration="2543000" />
       <workItem from="1658265249958" duration="3492000" />
       <workItem from="1658312669661" duration="8668000" />
-      <workItem from="1658391681427" duration="3705000" />
+      <workItem from="1658391681427" duration="6383000" />
     </task>
     <servers />
   </component>
