@@ -2,6 +2,7 @@ const { body, validationResult } = require('express-validator')
 const User = require('../models/user');
 const passport = require('passport');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 // Current User
 exports.current_user_get = (req, res, next) => {
@@ -37,9 +38,22 @@ exports.sign_in_get = (req, res, next) => {
 }
 
 exports.sign_in_post = (req, res, next) => {
-    passport.authenticate('local', {
-        successRedirect: '/',
-        failureRedirect: '/log-in'
+    passport.authenticate('local', (err, user, info) => {
+        if (err || !user) {
+            return res.status(400).json({
+                error: err,
+                user : user
+            });
+        }
+
+        req.login(user, {session: false}, (err) => {
+            if (err) return res.status(401).json({error: err});
+            const token = jwt.sign({user: user}, process.env.JWT_KEY);
+            return res.status(200).json({
+                message: 'Auth Passed',
+                token: token
+            });
+        })
     })
 }
 

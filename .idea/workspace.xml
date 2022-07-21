@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11122d08-0edf-4565-a3de-8a1118e921f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/Post.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/PostList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/SignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SignIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/SignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SignUp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/styles/Form.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/styles/Form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/postController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/postController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/passport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/posts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="SCSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
