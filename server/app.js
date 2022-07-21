@@ -31,13 +31,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../client/build')));
 
-
 app.use(session({ secret: "cats", resave: false, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.urlencoded({ extended: false }));
+
 app.use(compression());
-// app.use(helmet());
+app.use(helmet());
+
 app.use('/api/users', usersRouter);
 app.use('/api/posts', postsRouter);
 app.use('/api/posts/:postid/comments', commentsRouter);

@@ -1,5 +1,7 @@
 import React from 'react';
 import Nav from "./Nav";
+// eslint-disable-next-line
+import FormCss from './styles/Form.css';
 
 function SignUp() {
     return (
@@ -7,6 +9,9 @@ function SignUp() {
             <Nav />
             <main className='content'>
                 <div id="form-container">
+                    <div className="form-header">
+                        <h2>Create Account</h2>
+                    </div>
                     <form method='POST' action='http://localhost:5000/api/users/sign-up'>
                         <div className="form-control">
                             <label htmlFor="username">Username</label>
@@ -21,7 +26,7 @@ function SignUp() {
                         </div>
 
                         <div>
-                            <button type="submit">Submit</button>
+                            <button className='form-submit' type="submit">Submit</button>
                         </div>
                     </form>
                 </div>
