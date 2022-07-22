@@ -4,16 +4,30 @@ const Post = require('../models/post');
 const { body, validationResult } = require('express-validator');
 
 exports.posts_get = (req, res, next) => {
-
+    Post.find({})
+        .sort({timestamp: 1})
+        .exec((err, list_posts) => {
+            if (err) return next(err);
+            res.json({
+                posts: list_posts
+            })
+        })
 }
 
 exports.post_create = (req, res, next) => {
     jwt.verify(req.token, process.env.JWT_KEY, (err, authData) => {
         if (err) return res.json({error: err});
-        res.json({
-            message: 'Post Created',
-            data: authData,
-            timestamp: Date.now()
+        let newPost = new Post({
+            title: req.body.post_title,
+            text: req.body.post_text,
+            timestamp: Date.now(),
+            user: req.user,
+            published: req.body.published
+        })
+
+        newPost.save((err) => {
+            if (err) return next(err);
+            res.redirect('/posts');
         })
     })
 }

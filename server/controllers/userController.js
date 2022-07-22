@@ -6,6 +6,13 @@ const jwt = require('jsonwebtoken');
 
 // Current User
 exports.current_user_get = (req, res, next) => {
+    if (req.token) {
+        res.json({
+            user: req.user,
+            token_data: req.token
+        })
+        return;
+    }
     res.json({
         user: req.user,
     })
