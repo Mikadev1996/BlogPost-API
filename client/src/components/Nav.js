@@ -48,7 +48,7 @@ const Nav = () => {
                     <h1 style={titleFont}>EXPRESS-BLOG</h1>
                 </div>
                 <div className='nav-links'>
-                    <Link to='/'><p>Home</p></Link>
+                    <Link to='/posts'><p>Posts</p></Link>
                     <Link to='/sign-up'><p>Sign Up</p></Link>
                     <Link to='/sign-in'><p>Sign in</p></Link>
                 </div>
