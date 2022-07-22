@@ -26,6 +26,7 @@ nav {
   align-items: center;
   color: var(--text-color);
   border-bottom: 1px solid var(--accent-color);
+  font-size: 28px;
 }
 
 .nav-links {

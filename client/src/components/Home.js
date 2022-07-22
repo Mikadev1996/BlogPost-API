@@ -14,15 +14,15 @@ function Home() {
 
     const titleFont = {
         fontFamily: "Voga-Medium",
-        fontSize: "28px"
     }
 
   return (
       <div className='app'>
           <Nav />
-          <main className='content'>
+          <main className='home-content'>
               <div className='content-left'>
-                  <h1 style={titleFont}><strong>Home</strong></h1>
+                  <h1 style={titleFont}>Welcome</h1>
+                  <p style={titleFont}>Mika's First FullStack Development using MERN: MongoDB, Express.js, React, Node.js</p>
               </div>
 
               <div className="content-right">

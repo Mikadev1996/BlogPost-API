@@ -42,13 +42,39 @@ a {
   background-color: var(--background-color);
 }
 
-.content {
-  width: 100vw;
+.home-content {
+  width: 75vw;
   min-height: calc(100vh - 50px);
   margin-top: 50px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.content-left {
+  height: 100%;
+  width: 40%;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+.content-left h1 {
+  font-size: 52px;
+  border-bottom: var(--accent-color);
+}
+
+.content-left p {
+  width: 550px;
+  font-size: 28px;
+}
+
+.content-right {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #home-image {
