@@ -15,6 +15,7 @@ nav {
   color: black;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid var(--background-accent-color);
 }
 
 .nav-title {
@@ -24,6 +25,7 @@ nav {
   justify-content: center;
   align-items: center;
   color: var(--text-color);
+  border-bottom: 1px solid var(--accent-color);
 }
 
 .nav-links {
@@ -32,9 +34,12 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
+
 
 .nav-links a {
   margin: 0 10px;
+
 }
 

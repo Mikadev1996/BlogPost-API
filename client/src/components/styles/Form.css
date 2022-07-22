@@ -1,16 +1,15 @@
 #form-container {
     margin-top: 100px;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0 , 0.3);
+    background: var(--background-color);
     overflow: hidden;
     width: 400px;
     max-width: 100%;
+    border: 1px solid var(--background-accent-color)
 }
 
 .form-header {
     padding: 10px;
-    background: whitesmoke;
+    background: var(--background-accent-color);
     border-bottom: 1px solid darkgrey;
 }
 
