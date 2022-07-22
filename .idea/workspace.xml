@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11122d08-0edf-4565-a3de-8a1118e921f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/fonts/Voga-Medium.otf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Nav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/styles/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/styles/Home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/styles/Nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/styles/Nav.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +29,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="2CAGrL4U4thDcKHA0cmDmoltZ9C" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -53,6 +67,8 @@
       <recent name="C:\Users\Mika_Linux\Documents\GitRepos\blogpost-api\server\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Mika\Documents\GitRepos\BlogPost-API\client\src\fonts" />
+      <recent name="C:\Users\Mika\Documents\GitRepos\BlogPost-API\client\public" />
       <recent name="C:\Users\Mika\Documents\GitRepos\BlogPost-API\client\src\components" />
       <recent name="C:\Users\Mika\Documents\GitRepos\BlogPost-API\client\src" />
       <recent name="C:\Users\Mika_Linux\Documents\GitRepos\blogpost-api\server" />
@@ -75,6 +91,7 @@
       <workItem from="1658433471008" duration="313000" />
       <workItem from="1658434199892" duration="187000" />
       <workItem from="1658434460069" duration="630000" />
+      <workItem from="1658510149619" duration="4918000" />
     </task>
     <servers />
   </component>

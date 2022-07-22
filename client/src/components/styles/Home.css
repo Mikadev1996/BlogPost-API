@@ -6,24 +6,27 @@
 
 html[data-theme='light'] {
   --background-color: #fff;
+  --background-accent-color: #f1f3f4;
   --text-color: #121416d8;
   --link-color: #543fd7;
 }
 
 html[data-theme='dark'] {
-  --background-color: #212a2e;
-  --text-color: #F7F8F8;
+  --background-color: #0d1117;
+  --background-accent-color: #161b22;
+  --text-color: rgba(247, 248, 248, 0.97);
   --link-color: #828fff;
 }
 
 body {
-  font: 14px "Segoe UI", Helvetica, Arial, sans-serif;
+  font: 14px "Roboto", Helvetica, Arial, sans-serif;
+  color: var(--text-color);
   margin: 0;
   padding: 0;
 }
 
 a {
-  color: black;
+  color: var(--text-color);
   text-decoration: none;
 }
 .app {
@@ -32,6 +35,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--background-color);
 }
 
 .content {

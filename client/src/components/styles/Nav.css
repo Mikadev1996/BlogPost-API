@@ -8,11 +8,27 @@ nav {
   width: 100vw;
 }
 
-.nav-links {
+.nav-content {
   width: 100vw;
   height: 50px;
-  background-color: whitesmoke;
-  color: white;
+  background-color: var(--background-accent-color);
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+.nav-title {
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+}
+
+.nav-links {
+  height: 100%;
+  width: calc(100% - 600px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,6 +38,3 @@ nav {
   margin: 0 10px;
 }
 
-.nav-links div {
-  display: flex;
-}
