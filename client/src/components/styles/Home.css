@@ -9,6 +9,7 @@ html[data-theme='light'] {
   --background-accent-color: #f1f3f4;
   --border-color: #161b22;
   --text-color: #121416d8;
+  --create-border-color: #c4c4c4;
   --link-color: #543fd7;
   --accent-color: #07AD6D;
 }
@@ -16,6 +17,7 @@ html[data-theme='light'] {
 html[data-theme='dark'] {
   --background-color: #0d1117;
   --background-accent-color: #161b22;
+  --create-border-color: rgba(255, 255, 255, 0.09);
   --border-color: #f1f3f4;
   --text-color: rgba(247, 248, 248, 0.97);
   --link-color: #828fff;
