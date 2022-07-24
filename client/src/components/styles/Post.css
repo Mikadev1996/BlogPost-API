@@ -1,0 +1,47 @@
+
+
+.post-container {
+    border: 1px solid var(--create-border-color);
+    border-radius: 3px;
+    display: flex;
+    margin-top: 25px;
+}
+
+.post-likes-container {
+    height: 100%;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.post-info {
+    padding-left: 10px;
+    background-color: var(--background-accent-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.post-header {
+
+}
+
+.post-header p {
+    font-size: 12px;
+    opacity: 60%;
+}
+
+.post-header h2 {
+    margin: 5px 0;
+    padding: 0;
+    font-size: 18px;
+
+}
+
+.post-text {
+    margin: 5px 0;
+}
+
+.post-links {
+    opacity: 60%;
+}

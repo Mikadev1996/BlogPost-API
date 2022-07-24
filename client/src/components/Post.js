@@ -1,12 +1,12 @@
 import React from "react";
 // eslint-disable-next-line
-import PostsListCss from './styles/PostsList.css';
+import PostCss from './styles/Post.css';
 
 const Post = () => {
     return (
         <div className='post-container'>
             <div className='post-likes-container'>
-
+                Vote
             </div>
             <div className='post-info'>
                 <div className="post-header">
