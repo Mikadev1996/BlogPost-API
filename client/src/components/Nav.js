@@ -32,7 +32,6 @@ const Nav = () => {
         }
 
         toggle.onclick = () => {
-            console.log("test ", storedTheme);
             let currentTheme = document.documentElement.getAttribute("data-theme");
             let targetTheme = "light";
 

@@ -4,7 +4,7 @@ import Home from "./components/Home";
 import NotFound from "./components/NotFound";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
-import PostsList from "./components/test";
+import PostsList from "./components/PostsList";
 
 const RouteSwitch = () => {
     return (
