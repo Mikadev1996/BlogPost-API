@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
 import WebFont from 'webfontloader';
 // eslint-disable-next-line
@@ -7,6 +7,7 @@ import NavCss from './styles/Nav.css';
 import DarkModeToggleCss from './styles/DarkModeToggle.css';
 
 const Nav = () => {
+    const [darkModeEnabled, setDarkModeEnabled] = useState(false)
     WebFont.load({
         custom: {
             families: ['Voga-Medium'],
@@ -31,7 +32,14 @@ const Nav = () => {
             document.documentElement.setAttribute('data-theme', storedTheme)
         }
 
+        if (localStorage.getItem('theme') === 'light') {
+            setDarkModeEnabled(false);
+        } else {
+            setDarkModeEnabled(true);
+        }
+
         toggle.onclick = () => {
+            setDarkModeEnabled(darkModeEnabled => !darkModeEnabled);
             let currentTheme = document.documentElement.getAttribute("data-theme");
             let targetTheme = "light";
 
@@ -58,7 +66,7 @@ const Nav = () => {
                 <div id='dark-mode-container'>
                     <p>Dark Mode</p>
                     <label className="switch" >
-                        <input type="checkbox" id='theme-toggle'/>
+                        <input type="checkbox" id='theme-toggle' checked={darkModeEnabled}/>
                         <span className="slider round"></span>
                     </label>
                 </div>
