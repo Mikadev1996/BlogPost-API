@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11122d08-0edf-4565-a3de-8a1118e921f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/Comments.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/styles/Comments.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/styles/ViewPost.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/RouteSwitch.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/RouteSwitch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/PostsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/PostsList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/ViewPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ViewPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/styles/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/styles/Home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/styles/Nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/styles/Nav.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/styles/PostsList.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/styles/PostsList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/styles/ViewPost.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/styles/ViewPost.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +94,7 @@
       <workItem from="1658510149619" duration="9236000" />
       <workItem from="1658615003828" duration="2680000" />
       <workItem from="1658689509801" duration="6477000" />
-      <workItem from="1658744582407" duration="7154000" />
+      <workItem from="1658744582407" duration="9424000" />
     </task>
     <servers />
   </component>
