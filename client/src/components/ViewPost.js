@@ -17,16 +17,21 @@ const ViewPost = () => {
                         <div className='view-post-likes-container'>Vote</div>
 
                         <div className='view-post-info'>
-                            <p>Posted by user/SomeUser123 (Date posted)</p>
-                            <div className='view-post-header'>Title</div>
-                        </div>
+                            <div className='post-header'>
+                                <p>Posted by user/SomeUser123 (Date posted)</p>
+                                <h2>Post Title</h2>
+                            </div>
 
-                        <div className='view-post-text'>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cupiditate, distinctio ducimus ea earum hic, incidunt itaque iure laboriosam laudantium magnam nam optio placeat possimus qui saepe sequi tempora voluptate.
-                        </div>
-
-                        <div className='add-comment-container'>
-
+                            <div className='view-post-text'>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cupiditate, distinctio ducimus ea earum hic, incidunt itaque iure laboriosam laudantium magnam nam optio placeat possimus qui saepe sequi tempora voluptate.
+                            </div>
+                            <div className='add-comment-container'>
+                                <textarea placeholder='What are your thoughts?'>
+                                </textarea>
+                                <div className='submit-comment-container'>
+                                    <button type='submit' className='submit-comment'>Comment</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <hr className='hr-comments'/>

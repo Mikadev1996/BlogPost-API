@@ -6,7 +6,7 @@
 
 html[data-theme='light'] {
   --background-color: #fff;
-  --background-alt-color: rgba(148, 148, 148, 0.47);
+  --background-alt-color: #dae0e6;
   --background-accent-color: #f1f3f4;
   --border-color: #161b22;
   --text-color: #121416d8;
