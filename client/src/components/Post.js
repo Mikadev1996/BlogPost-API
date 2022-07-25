@@ -1,13 +1,15 @@
 import React from "react";
 // eslint-disable-next-line
 import PostCss from './styles/Post.css';
+import {Link} from "react-router-dom";
 
-const Post = () => {
+const Post = ({postid}) => {
     return (
         <div className='post-container'>
             <div className='post-likes-container'>
                 Vote
             </div>
+            <Link to={`/posts/${postid}`}>
             <div className='post-info'>
                 <div className="post-header">
                     <p>Posted by user/SomeUser123 (Date posted)</p>
@@ -23,6 +25,7 @@ const Post = () => {
                     <p>x Comments</p>
                 </div>
             </div>
+            </Link>
         </div>
     )
 }

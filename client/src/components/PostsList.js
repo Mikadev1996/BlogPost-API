@@ -13,9 +13,9 @@ const PostsList = () => {
                 <div className='container'>
                     <CreatePost />
                     <div className='post-list-container'>
-                        <Post />
-                        <Post />
-                        <Post />
+                        <Post postid='123' />
+                        <Post postid='456'/>
+                        <Post postid='789'/>
                     </div>
                 </div>
             </main>
