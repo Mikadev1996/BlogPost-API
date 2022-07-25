@@ -7,6 +7,10 @@
     margin-top: 25px;
 }
 
+.post-container:hover {
+    border-color: var(--border-hover);
+}
+
 .post-likes-container {
     height: 100%;
     width: 100px;

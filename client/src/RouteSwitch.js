@@ -5,6 +5,7 @@ import NotFound from "./components/NotFound";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import PostsList from "./components/PostsList";
+import Post from "./components/Post";
 
 const RouteSwitch = () => {
     return (
@@ -12,6 +13,7 @@ const RouteSwitch = () => {
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/posts' element={<PostsList />} />
+                <Route path='/posts/:postid' element={<Post />} />
                 <Route path ='/sign-in' element={<SignIn/>}/>
                 <Route path ='/sign-up' element={<SignUp/>}/>
                 <Route path='*' element={<NotFound />}/>

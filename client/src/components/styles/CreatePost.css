@@ -41,5 +41,6 @@
 }
 
 .create-post-main:hover {
-    border-color: whitesmoke;
+    border-color: var(--border-hover);
 }
+

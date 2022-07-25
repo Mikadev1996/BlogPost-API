@@ -32,11 +32,7 @@ const Nav = () => {
             document.documentElement.setAttribute('data-theme', storedTheme)
         }
 
-        if (localStorage.getItem('theme') === 'light') {
-            setDarkModeEnabled(false);
-        } else {
-            setDarkModeEnabled(true);
-        }
+        localStorage.getItem('theme') === 'light' ? setDarkModeEnabled(false) : setDarkModeEnabled(true);
 
         toggle.onclick = () => {
             setDarkModeEnabled(darkModeEnabled => !darkModeEnabled);

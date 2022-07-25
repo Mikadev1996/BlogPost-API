@@ -12,6 +12,7 @@ html[data-theme='light'] {
   --create-border-color: #c4c4c4;
   --link-color: #543fd7;
   --accent-color: #07AD6D;
+  --border-hover: #161B22FF
 }
 
 html[data-theme='dark'] {
@@ -22,6 +23,7 @@ html[data-theme='dark'] {
   --text-color: rgba(247, 248, 248, 0.97);
   --link-color: #828fff;
   --accent-color: #07AD6D;
+  --border-hover: rgba(245, 245, 245, 0.49);
 }
 
 body {
