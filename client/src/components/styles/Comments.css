@@ -1,0 +1,33 @@
+.comment-profile-pic {
+    width: 20px;
+    height: 20px;
+}
+
+.comment-section-container {
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comment-container {
+    width: 90%;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+}
+
+.comment-header * {
+    margin: 0 10px;
+    font-size: 12px;
+}
+
+.comment-timestamp {
+    opacity: 60%;
+}
+.comment-text {
+    padding: 0 10px;
+}

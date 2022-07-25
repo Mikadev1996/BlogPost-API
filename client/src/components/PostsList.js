@@ -3,7 +3,7 @@ import Nav from "./Nav";
 // eslint-disable-next-line
 import PostsListCss from './styles/PostsList.css';
 import Post from "./Post";
-import CreatePost from "./CreatePost";
+import CreatePostBar from "./CreatePostBar";
 
 const PostsList = () => {
     return (
@@ -11,9 +11,9 @@ const PostsList = () => {
             <Nav />
             <main className='content'>
                 <div className='container'>
-                    <CreatePost />
+                    <CreatePostBar />
                     <div className='post-list-container'>
-                        <Post postid='123' />
+                        <Post postid='123'/>
                         <Post postid='456'/>
                         <Post postid='789'/>
                     </div>

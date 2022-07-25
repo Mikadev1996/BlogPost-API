@@ -2,7 +2,7 @@ import React from "react";
 // eslint-disable-next-line
 import CreatePostCss from './styles/CreatePost.css'
 
-const CreatePost = () => {
+const CreatePostBar = () => {
     return (
         <div className='create-post-bar'>
             <div className='create-post-profile-pic-container'>
@@ -15,4 +15,4 @@ const CreatePost = () => {
     )
 }
 
-export default CreatePost;
+export default CreatePostBar;
