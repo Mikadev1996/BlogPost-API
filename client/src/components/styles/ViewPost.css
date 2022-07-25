@@ -12,6 +12,7 @@
     min-height: calc(100% - 115px);
     width: 42rem;
     border-radius: 5px;
+    /*border-left: 2px solid var(--accent-color);*/
 }
 
 .view-post-content {
@@ -21,8 +22,11 @@
 }
 
 .view-post-likes-container {
-    width: 60px;
-    height: 100%;
+    width: 100px;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
 
 }
 
