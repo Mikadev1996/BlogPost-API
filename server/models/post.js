@@ -4,7 +4,9 @@ const Schema = mongoose.Schema;
 const PostSchema = new Schema({
     title: {type: String, required: true},
     text: {type: String, required: true},
+    likes: {type: Number, required:true, default: 0},
     timestamp: {type: Date, required: true},
+    edited: {type: Boolean, required: true, default: false},
     user: {type: Schema.Types.ObjectId, ref:'User', required: true},
     published: {type: Boolean, required: true, default: false}
 })
@@ -12,7 +14,7 @@ const PostSchema = new Schema({
 PostSchema
     .virtual('url')
     .get(function() {
-        return '/posts' + this._id;
+        return '/posts/' + this._id;
     });
 
 module.exports = mongoose.model('Post', PostSchema);

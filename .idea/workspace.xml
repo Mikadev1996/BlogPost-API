@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11122d08-0edf-4565-a3de-8a1118e921f6" name="Changes" comment="" />
+    <list default="true" id="11122d08-0edf-4565-a3de-8a1118e921f6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/postController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/postController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/comment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,6 +94,7 @@
       <workItem from="1658615003828" duration="2680000" />
       <workItem from="1658689509801" duration="6477000" />
       <workItem from="1658744582407" duration="14626000" />
+      <workItem from="1658825576892" duration="1580000" />
     </task>
     <servers />
   </component>

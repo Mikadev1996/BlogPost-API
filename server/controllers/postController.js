@@ -1,6 +1,7 @@
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const Post = require('../models/post');
+const mongoose = require('mongoose');
 const { body, validationResult } = require('express-validator');
 
 exports.posts_get = (req, res, next) => {
@@ -32,13 +33,25 @@ exports.post_create = (req, res, next) => {
     })
 }
 
-exports.post_update = (req, res, next) => {
-    Post.findByIdAndUpdate(req.params.id)
-        .exec((err, post) => {
-            res.json({
-                post: post
-            })
-        })
+exports.post_update_get = (req, res, next) => {
+
+}
+
+exports.post_update_post = (req, res, next) => {
+
+    let newPost = new Post({
+        title: req.body.title,
+        text: req.body.title,
+        timestamp: Date.now(),
+        edited: true,
+        _id: req.params.id
+    })
+
+    Post.findByIdAndUpdate(req.params.id, newPost, {}, function (err, thePost) {
+        if (err) return next(err);
+        res.redirect(thePost.url);
+    })
+
 }
 
 exports.post_delete = (req, res, next) => {
