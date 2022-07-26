@@ -19,10 +19,11 @@ exports.post_create = (req, res, next) => {
     jwt.verify(req.token, process.env.JWT_KEY, (err, authData) => {
         if (err) return res.json({error: err});
         let newPost = new Post({
-            title: req.body.post_title,
-            text: req.body.post_text,
+            title: req.body.title,
+            text: req.body.text,
+            likes: 0,
             timestamp: Date.now(),
-            user: req.user,
+            user: req.user._id,
             published: req.body.published
         })
 
@@ -34,21 +35,33 @@ exports.post_create = (req, res, next) => {
 }
 
 exports.post_update_get = (req, res, next) => {
-
+    Post.findById(req.params.id)
+        .exec((err, results) => {
+            if (err) {
+                res.json({error: err});
+                return next(err);
+            }
+            res.json({
+                post: results
+            })
+        })
 }
 
 exports.post_update_post = (req, res, next) => {
-
     let newPost = new Post({
         title: req.body.title,
         text: req.body.title,
         timestamp: Date.now(),
         edited: true,
+        updated: req.body.updated,
         _id: req.params.id
     })
 
     Post.findByIdAndUpdate(req.params.id, newPost, {}, function (err, thePost) {
-        if (err) return next(err);
+        if (err) {
+            res.json({error: err});
+            return next(err);
+        }
         res.redirect(thePost.url);
     })
 

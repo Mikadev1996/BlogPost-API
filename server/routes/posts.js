@@ -12,10 +12,11 @@ router.post('/create', verifyToken, postController.post_create);
 
 
 // Update Post (Published/Unpublished)
-router.put('/post/:id/update', verifyToken, postController.post_update);
+router.get('/post/:id/update', verifyToken, postController.post_update_get);
+router.put('/post/:id/update', verifyToken, postController.post_update_post);
 
 // Delete Post
-router.delete('/post/:id', verifyToken, )
+router.delete('/post/:id', verifyToken, postController.post_delete)
 
 
 function verifyToken(req, res, next) {
