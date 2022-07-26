@@ -4,6 +4,7 @@ import CreatePostCss from './styles/CreatePost.css'
 import Nav from "./Nav";
 
 const CreatePost = () => {
+
     return (
         <div className='app'>
             <Nav />
@@ -18,20 +19,16 @@ const CreatePost = () => {
                         <form method='POST' action='http://localhost:5000/api/posts'>
                             <div className="form-control">
                                 <label htmlFor="title">Username</label>
-                                <input type="text" placeholder="Title" id="title" name='title'/>
-                                <small>Error Message</small>
+                                <input type="text" placeholder="Title" id="title" name='title' required='true'/>
                             </div>
 
                             <div className="form-control">
                                 <label htmlFor="text">Password</label>
-                                <input type="text" placeholder="Text" id="text" maxLength="16" name='text'/>
-                                <small>Error Message</small>
+                                <textarea placeholder="Text" id="text" maxLength="500" name='text' required='true' />
                             </div>
 
-                            <textarea placeholder='What are your thoughts?' />
-
                             <div className="form-control">
-                                <input type='checkbox' />
+                                <input type='checkbox' id='published' name='published' required='true'/>
                             </div>
 
                             <div>

@@ -58,6 +58,7 @@ const Nav = () => {
                     <Link to='/posts'><p>Posts</p></Link>
                     <Link to='/sign-up'><p>Sign Up</p></Link>
                     <Link to='/sign-in'><p>Sign in</p></Link>
+                    <Link to='http://localhost:5000/api/posts'><p>Sign out</p></Link>
                 </div>
                 <div id='dark-mode-container'>
                     <p>Dark Mode</p>
