@@ -12,7 +12,7 @@ require('./passport');
 
 const usersRouter = require('./routes/users');
 const postsRouter = require('./routes/posts');
-const commentsRouter = require('./routes/posts');
+const commentsRouter = require('./routes/comments');
 const mongoose = require("mongoose");
 
 const myMongoDB = process.env.MONGO;

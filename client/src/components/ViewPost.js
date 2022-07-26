@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom";
 // eslint-disable-next-line
 import ViewPostCss from './styles/ViewPost.css';
 import Comments from "./Comments";
+import AddComment from "../AddComment";
 
 const ViewPost = () => {
     const { postid } = useParams();
@@ -25,13 +26,8 @@ const ViewPost = () => {
                             <div className='view-post-text'>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cupiditate, distinctio ducimus ea earum hic, incidunt itaque iure laboriosam laudantium magnam nam optio placeat possimus qui saepe sequi tempora voluptate.
                             </div>
-                            <div className='add-comment-container'>
-                                <textarea placeholder='What are your thoughts?'>
-                                </textarea>
-                                <div className='submit-comment-container'>
-                                    <button type='submit' className='submit-comment'>Comment</button>
-                                </div>
-                            </div>
+
+                            <AddComment />
                         </div>
                     </div>
                     <hr className='hr-comments'/>
