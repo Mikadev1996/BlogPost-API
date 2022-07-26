@@ -1,10 +1,14 @@
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const Post = require('../models/post');
+const Comment = require('../models/comment');
 const mongoose = require('mongoose');
 const { body, validationResult } = require('express-validator');
+const async = require('async');
 
-exports.posts_get = (req, res, next) => {
+
+// Get All Posts
+exports.posts_all_get = (req, res, next) => {
     Post.find({})
         .sort({timestamp: 1})
         .exec((err, list_posts) => {
@@ -13,6 +17,29 @@ exports.posts_get = (req, res, next) => {
                 posts: list_posts
             })
         })
+}
+
+// Get Single Posts
+exports.posts_single_get = (req, res, next) => {
+    async.parallel({
+        post_details(callback) {
+            Post.findById(req.params.id)
+                .exec(callback);
+        },
+        comments(callback) {
+            Comment.find({post: req.params.id})
+                .exec(callback);
+        }
+    }, (err, results) => {
+        if (err) {
+            res.json({error: err});
+            return next(err);
+        }
+        res.json({
+            post: results.post_details,
+            comments: results.comments
+        })
+    })
 }
 
 exports.post_create = (req, res, next) => {
