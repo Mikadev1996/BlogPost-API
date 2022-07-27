@@ -35,27 +35,21 @@ exports.sign_up_post = (req, res, next) => {
 }
 
 // Sign In
-exports.sign_in_post = (req, res, next) => {
-    passport.authenticate('local', (err, user, info) => {
+exports.sign_in_post = function (req, res) {
+    passport.authenticate("local", { session: false }, (err, user) => {
         if (err || !user) {
-            // return res.status(400).json({
-            //     error: err,
-            //     user : user
-            // });
-            res.send({error: err, user: user});
-            return next(err);
+            return res.json({error: err})
         }
 
-        req.login(user, {session: false}, (err) => {
-            if (err) return res.status(401).json({error: err});
-            const token = jwt.sign({user: user}, process.env.JWT_KEY);
-            return res.status(200).json({
-                message: 'Auth Passed',
-                token: token
+        jwt.sign({ _id: user._id, username: user.username }, process.env.JWT_KEY, { expiresIn: "10m" }, (err, token) => {
+            if (err) return console.log(err);
+            res.json({
+                token: token,
+                user: { _id: user._id, username: user.username },
             });
-        })
-    })
-}
+        });
+    })(req, res);
+};
 
 // Sign Out
 exports.sign_out_post = (req, res, next) => {

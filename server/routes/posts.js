@@ -8,31 +8,17 @@ router.get('/', postController.posts_all_get);
 router.get('/post/:id', postController.post_get);
 
 // Create Post
-router.post('/create', verifyToken, postController.post_create);
+router.post('/create', postController.post_create);
 
 
 // Update Post (Published/Unpublished)
-router.get('/post/:id/update', verifyToken, postController.post_update_get);
-router.put('/post/:id/update', verifyToken, postController.post_update_post);
+router.get('/post/:id/update', postController.post_update_get);
+router.put('/post/:id/update', postController.post_update_post);
 
 // Delete Post
-router.delete('/post/:id', verifyToken, postController.post_delete)
+router.delete('/post/:id', postController.post_delete)
 
 
-function verifyToken(req, res, next) {
-    // Get auth header value
-    const bearerHeader = req.headers['authorization'];
-    // Check if undefined
-    if (typeof bearerHeader !== 'undefined') {
-        // Split at space
-        const bearer = bearerHeader.split(' ');
-        req.token = bearer[1];
-        next();
-    } else {
-        res.sendStatus(403).json({error: 'Token undefined'})
-    }
-
-}
 
 module.exports = router;
 

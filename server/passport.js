@@ -21,17 +21,12 @@ passport.use(
 )
 
 passport.use(new JWTStrategy({
-    jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
-    secretOrKey: process.env.JWT_KEY
-}, function(jwtPayload, done) {
-    return User.findOne({username: jwtPayload.username})
-        .then(user => {
-            return done(null, user);
-        })
-        .catch(err => {
-            return done(err, false);
-        })
-}))
+        jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
+        secretOrKey: process.env.JWT_KEY
+    }, (jwtPayload, done) => {
+        return done(null, jwtPayload);
+    }
+))
 
 passport.serializeUser(function(user, done) {
     done(null, user.id);
