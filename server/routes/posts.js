@@ -4,8 +4,8 @@ const postController = require('../controllers/postController');
 const {post_update} = require("../controllers/postController");
 
 // Get Posts / Post
-router.get('/', postController.posts_get);
-router.get('/post/:id')
+router.get('/', postController.posts_all_get);
+router.get('/post/:id', postController.post_get);
 
 // Create Post
 router.post('/create', verifyToken, postController.post_create);

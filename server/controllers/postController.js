@@ -20,7 +20,7 @@ exports.posts_all_get = (req, res, next) => {
 }
 
 // Get Single Posts
-exports.posts_single_get = (req, res, next) => {
+exports.post_get = (req, res, next) => {
     async.parallel({
         post_details(callback) {
             Post.findById(req.params.id)

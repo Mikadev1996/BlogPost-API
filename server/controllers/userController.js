@@ -38,10 +38,12 @@ exports.sign_up_post = (req, res, next) => {
 exports.sign_in_post = (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
         if (err || !user) {
-            return res.status(400).json({
-                error: err,
-                user : user
-            });
+            // return res.status(400).json({
+            //     error: err,
+            //     user : user
+            // });
+            res.send({error: err, user: user});
+            return next(err);
         }
 
         req.login(user, {session: false}, (err) => {
@@ -58,7 +60,10 @@ exports.sign_in_post = (req, res, next) => {
 // Sign Out
 exports.sign_out_post = (req, res, next) => {
     req.logout((err) => {
-        if (err) return next(err);
+        if (err) {
+            res.send({error: err});
+            return next(err);
+        }
     })
     res.redirect('/');
 }

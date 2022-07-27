@@ -6,12 +6,21 @@ import Post from "./Post";
 import CreatePostBar from "./CreatePostBar";
 
 const PostsList = () => {
+
+    const testFetch = () => {
+        fetch('http://localhost:5000/api/users/current-user')
+            .then(r => r.json())
+            .then(data => console.log(data))
+            .catch(err => console.log(err));
+    }
+
     return (
         <div className='app'>
             <Nav />
             <main className='content'>
                 <div className='container'>
                     <CreatePostBar />
+                    <button onClick={testFetch}>Test Fetch</button>
                     <div className='post-list-container'>
                         <Post postid='123'/>
                         <Post postid='456'/>
