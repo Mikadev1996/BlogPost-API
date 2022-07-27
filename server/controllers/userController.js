@@ -43,10 +43,21 @@ exports.sign_in_post = function (req, res) {
 
         jwt.sign({ _id: user._id, username: user.username }, process.env.JWT_KEY, { expiresIn: "10m" }, (err, token) => {
             if (err) return console.log(err);
-            res.json({
+            res.send({
                 token: token,
-                user: { _id: user._id, username: user.username },
-            });
+                user: {
+                    _id: user._id,
+                    username: user.username
+                },
+            })
+
+            // res.json({
+            //     token: token,
+            //     user: {
+            //         _id: user._id,
+            //         username: user.username
+            //     },
+            // });
         });
     })(req, res);
 };

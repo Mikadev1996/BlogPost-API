@@ -11,7 +11,6 @@ const PostsList = () => {
         fetch('http://localhost:5000/api/users/current-user')
             .then(r => r.json())
             .then(data => console.log(data))
-            .catch(err => console.log(err));
     }
 
     return (
