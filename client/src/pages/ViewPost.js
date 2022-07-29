@@ -1,10 +1,10 @@
 import React from "react";
-import Nav from "./Nav";
+import Nav from "../components/Nav";
 import {useParams} from "react-router-dom";
 // eslint-disable-next-line
-import ViewPostCss from './styles/ViewPost.css';
-import Comments from "./Comments";
-import AddComment from "../AddComment";
+import ViewPostCss from '../components/styles/ViewPost.css';
+import Comments from "../components/Comments";
+import AddComment from "../components/AddComment";
 
 const ViewPost = () => {
     const { postid } = useParams();

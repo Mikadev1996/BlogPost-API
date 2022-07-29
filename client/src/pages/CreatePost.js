@@ -1,7 +1,7 @@
 import React from "react";
 // eslint-disable-next-line
-import CreatePostCss from './styles/CreatePost.css'
-import Nav from "./Nav";
+import CreatePostCss from '../components/styles/CreatePost.css'
+import Nav from "../components/Nav";
 
 const CreatePost = () => {
 

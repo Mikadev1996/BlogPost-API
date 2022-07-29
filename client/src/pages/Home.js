@@ -1,7 +1,7 @@
 import React from 'react';
-import Nav from "./Nav";
+import Nav from "../components/Nav";
 // eslint-disable-next-line
-import HomeCss from './styles/Home.css';
+import HomeCss from '../components/styles/Home.css';
 import WebFont from "webfontloader";
 
 function Home() {

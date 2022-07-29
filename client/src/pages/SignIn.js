@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
-import Nav from "./Nav";
+import Nav from "../components/Nav";
 // eslint-disable-next-line
-import FormCss from './styles/Form.css';
+import FormCss from '../components/styles/Form.css';
+import { useNavigate } from "react-router-dom";
 
 function SignIn() {
+    let nav = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -13,10 +15,13 @@ function SignIn() {
             username: username,
             password: password
         });
-        console.log(formData);
         fetch('http://localhost:5000/api/users/sign-in', {method: 'POST', body: formData, headers:{'Content-Type': 'application/json'}})
             .then(r => r.json())
-            .then(data => console.log(data));
+            .then(data => {
+                localStorage.setItem('user', data.user);
+                localStorage.setItem('token', data.token);
+                nav("/posts");
+            });
     }
 
     return (

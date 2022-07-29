@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React from 'react';
-import Home from "./components/Home";
+import Home from "./pages/Home";
 import NotFound from "./components/NotFound";
-import SignIn from "./components/SignIn";
-import SignUp from "./components/SignUp";
-import PostsList from "./components/PostsList";
-import ViewPost from "./components/ViewPost";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
+import PostsList from "./pages/PostsList";
+import ViewPost from "./pages/ViewPost";
 
 const RouteSwitch = () => {
     return (

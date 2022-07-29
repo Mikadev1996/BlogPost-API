@@ -8,7 +8,10 @@ const jwt = require('jsonwebtoken');
 exports.current_user_get = (req, res, next) => {
     if (req.token) {
         res.json({
-            user: req.user,
+            user: {
+                _id: req.user._id,
+                username: req.user.username
+            },
             token_data: req.token
         })
         return;
@@ -43,21 +46,13 @@ exports.sign_in_post = function (req, res) {
 
         jwt.sign({ _id: user._id, username: user.username }, process.env.JWT_KEY, { expiresIn: "10m" }, (err, token) => {
             if (err) return console.log(err);
-            res.send({
+            res.json({
                 token: token,
                 user: {
                     _id: user._id,
                     username: user.username
                 },
             })
-
-            // res.json({
-            //     token: token,
-            //     user: {
-            //         _id: user._id,
-            //         username: user.username
-            //     },
-            // });
         });
     })(req, res);
 };

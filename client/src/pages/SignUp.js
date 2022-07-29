@@ -1,7 +1,7 @@
 import React from 'react';
-import Nav from "./Nav";
+import Nav from "../components/Nav";
 // eslint-disable-next-line
-import FormCss from './styles/Form.css';
+import FormCss from '../components/styles/Form.css';
 
 function SignUp() {
     return (

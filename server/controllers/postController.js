@@ -24,6 +24,7 @@ exports.post_get = (req, res, next) => {
     async.parallel({
         post_details(callback) {
             Post.findById(req.params.id)
+                .populate("user")
                 .exec(callback);
         },
         comments(callback) {
@@ -44,7 +45,7 @@ exports.post_get = (req, res, next) => {
 
 exports.post_create = (req, res, next) => {
     jwt.verify(req.token, process.env.JWT_KEY, (err, authData) => {
-        if (err) return res.json({error: err});
+        if (err) return res.json({error: err, message: "JWT Auth Error"});
         let newPost = new Post({
             title: req.body.title,
             text: req.body.text,
@@ -62,36 +63,48 @@ exports.post_create = (req, res, next) => {
 }
 
 exports.post_update_get = (req, res, next) => {
-    Post.findById(req.params.id)
-        .exec((err, results) => {
-            if (err) {
-                res.json({error: err});
-                return next(err);
-            }
-            res.json({
-                post: results
+    jwt.verify(req.token, process.env.JWT_KEY, (err, authData) => {
+        if (err) return res.json({error: err, message: "JWT Auth Error"});
+        Post.findById(req.params.id)
+            .populate("user")
+            .exec((err, results) => {
+                if (err) {
+                    res.json({error: err});
+                    return next(err);
+                }
+                res.json({
+                    post: results
+                })
             })
-        })
+    })
 }
 
 exports.post_update_post = (req, res, next) => {
-    let newPost = new Post({
-        title: req.body.title,
-        text: req.body.title,
-        timestamp: Date.now(),
-        edited: true,
-        updated: req.body.updated,
-        _id: req.params.id
-    })
+    jwt.verify(req.token, process.env.JWT_KEY, (err, authData) => {
+        let newPost = new Post({
+            title: req.body.title,
+            text: req.body.title,
+            timestamp: Date.now(),
+            edited: true,
+            updated: req.body.updated,
+            _id: req.params.id
+        })
 
-    Post.findByIdAndUpdate(req.params.id, newPost, {}, function (err, thePost) {
-        if (err) {
-            res.json({error: err});
-            return next(err);
-        }
-        res.redirect(thePost.url);
-    })
+        Post.findById(req.params.id)
+            .populate("user")
+            .exec((checkErr, results) => {
+                if (checkErr) return res.json({error: checkErr, message: "Check reqUser & postUser error"});
+                else if (results.user._id !== authData.user._id) return res.json({error: "Incorrect User Account"});
+            })
 
+        Post.findByIdAndUpdate(req.params.id, newPost, {}, function (error, thePost) {
+            if (error) {
+                res.json({error: error});
+                return next(error);
+            }
+            res.redirect(thePost.url);
+        })
+    })
 }
 
 exports.post_delete = (req, res, next) => {
