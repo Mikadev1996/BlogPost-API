@@ -8,6 +8,13 @@ import DarkModeToggleCss from './styles/DarkModeToggle.css';
 
 const Nav = () => {
     const [darkModeEnabled, setDarkModeEnabled] = useState(false)
+    const [user, setUser] = useState("");
+    const [token, setToken] = useState("");
+
+    useEffect(() => {
+        setUser(localStorage.getItem('user'));
+        setToken(localStorage.getItem('token'));
+    })
 
     useEffect(() => {
         WebFont.load({
@@ -17,7 +24,7 @@ const Nav = () => {
             }
         })
         handleDarkModeToggle();
-    }, []);
+    });
 
     const titleFont = {
         fontFamily: "Voga-Medium",
@@ -46,6 +53,10 @@ const Nav = () => {
             document.documentElement.setAttribute('data-theme', targetTheme)
             localStorage.setItem('theme', targetTheme);
         };
+    }
+
+    const handleSignOut = (e) => {
+
     }
 
     return (
