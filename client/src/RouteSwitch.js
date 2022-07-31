@@ -6,6 +6,7 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import PostsList from "./pages/PostsList";
 import ViewPost from "./pages/ViewPost";
+import CreatePost from "./pages/CreatePost";
 
 const RouteSwitch = () => {
     return (
@@ -14,6 +15,7 @@ const RouteSwitch = () => {
                 <Route path='/' element={<Home />} />
                 <Route path='/posts' element={<PostsList />} />
                 <Route path='/posts/:postid' element={<ViewPost />} />
+                <Route path='/posts/create' element={<CreatePost />} />
                 <Route path ='/sign-in' element={<SignIn/>}/>
                 <Route path ='/sign-up' element={<SignUp/>}/>
                 <Route path='*' element={<NotFound />}/>

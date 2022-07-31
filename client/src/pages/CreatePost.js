@@ -13,7 +13,6 @@ const CreatePost = () => {
     const [published, setPublished] = useState(false);
     let nav = useNavigate();
 
-
     useEffect(() => {
         handleUser();
     }, []);
@@ -36,13 +35,6 @@ const CreatePost = () => {
         })
 
         fetch('http://localhost:5000/api/posts/create', {method: 'POST', body: formData, headers: {'Content-Type': 'application.json'}})
-            .then(r => r.json())
-            .then(data => {
-                console.log(data);
-            })
-            .catch(err => {
-                console.log(err)
-            })
     }
 
     return (
@@ -56,15 +48,15 @@ const CreatePost = () => {
                             <h2>Create Post</h2>
                         </div>
 
-                        <form method='POST' action='http://localhost:5000/api/posts'>
+                        <form onSubmit={submitPost}>
                             <div className="form-control">
                                 <label htmlFor="title">Username</label>
-                                <input type="text" placeholder="Title" id="title" name='title' required='true'/>
+                                <input type="text" placeholder="Title" id="title" name='title' required='true' onChange={e => setTitle(e.target.value)}/>
                             </div>
 
                             <div className="form-control">
                                 <label htmlFor="text">Password</label>
-                                <textarea placeholder="Text" id="text" maxLength="500" name='text' required='true' />
+                                <textarea placeholder="Text" id="text" maxLength="500" name='text' required='true' onChange={e => setText(e.target.value)} />
                             </div>
 
                             <div className="form-control">
