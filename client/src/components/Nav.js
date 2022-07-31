@@ -58,7 +58,6 @@ const Nav = () => {
 
     const handleSignOut = (e) => {
         e.preventDefault();
-        console.log("sign out clicked");
         
         fetch('http://localhost:5000/api/users/sign-out', {method: 'POST'})
             .then(r => {
@@ -76,8 +75,6 @@ const Nav = () => {
     const handleUser = () => {
         let storageUser = localStorage.getItem('user');
         let storageToken = localStorage.getItem('token');
-        console.log(user, storageUser);
-        console.log(token, storageToken);
         if (storageUser && storageToken) {
             setUser(storageUser);
             setToken(storageToken);

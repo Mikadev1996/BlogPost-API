@@ -1,9 +1,49 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 // eslint-disable-next-line
 import CreatePostCss from '../components/styles/CreatePost.css'
 import Nav from "../components/Nav";
+import {useNavigate} from "react-router-dom";
 
 const CreatePost = () => {
+    const [user, setUser] = useState("");
+    const [token, setToken] = useState("");
+
+    const [title, setTitle] = useState("");
+    const [text, setText] = useState("");
+    const [published, setPublished] = useState(false);
+    let nav = useNavigate();
+
+
+    useEffect(() => {
+        handleUser();
+    }, []);
+
+    const handleUser = () => {
+        let storageUser = localStorage.getItem('user');
+        let storageToken = localStorage.getItem('token');
+        if (storageUser && storageToken) {
+            setUser(storageUser);
+            setToken(storageToken);
+        }
+    }
+
+    const submitPost = (e) => {
+        e.preventDefault();
+        const formData = JSON.stringify({
+            title: title,
+            text: text,
+            published: published
+        })
+
+        fetch('http://localhost:5000/api/posts/create', {method: 'POST', body: formData, headers: {'Content-Type': 'application.json'}})
+            .then(r => r.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
 
     return (
         <div className='app'>
