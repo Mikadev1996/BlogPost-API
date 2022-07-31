@@ -11,7 +11,7 @@ const PostsList = () => {
 
     useEffect(() => {
         getPosts();
-    })
+    }, [])
 
     const getPosts = () => {
         fetch('http://localhost:5000/api/posts')

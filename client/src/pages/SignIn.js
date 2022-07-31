@@ -18,8 +18,8 @@ function SignIn() {
         fetch('http://localhost:5000/api/users/sign-in', {method: 'POST', body: formData, headers:{'Content-Type': 'application/json'}})
             .then(r => r.json())
             .then(data => {
-                localStorage.setItem('user', data.user);
-                localStorage.setItem('token', data.token);
+                localStorage.setItem('user', JSON.stringify(data.user));
+                localStorage.setItem('token', JSON.stringify(data.token));
                 nav("/posts");
             });
     }

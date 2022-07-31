@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Link} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import WebFont from 'webfontloader';
 // eslint-disable-next-line
 import NavCss from './styles/Nav.css';
@@ -11,10 +11,11 @@ const Nav = () => {
     const [user, setUser] = useState("");
     const [token, setToken] = useState("");
 
+    let nav = useNavigate();
+
     useEffect(() => {
-        setUser(localStorage.getItem('user'));
-        setToken(localStorage.getItem('token'));
-    })
+        handleUser();
+    }, []);
 
     useEffect(() => {
         WebFont.load({
@@ -56,7 +57,31 @@ const Nav = () => {
     }
 
     const handleSignOut = (e) => {
+        e.preventDefault();
+        console.log("sign out clicked");
+        
+        fetch('http://localhost:5000/api/users/sign-out', {method: 'POST'})
+            .then(r => {
+                localStorage.removeItem('user');
+                localStorage.removeItem('token');
+                setUser("");
+                setToken("");
+                nav("/");
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
 
+    const handleUser = () => {
+        let storageUser = localStorage.getItem('user');
+        let storageToken = localStorage.getItem('token');
+        console.log(user, storageUser);
+        console.log(token, storageToken);
+        if (storageUser && storageToken) {
+            setUser(storageUser);
+            setToken(storageToken);
+        }
     }
 
     return (
@@ -67,9 +92,9 @@ const Nav = () => {
                 </div>
                 <div className='nav-links'>
                     <Link to='/posts'><p>Posts</p></Link>
-                    <Link to='/sign-up'><p>Sign Up</p></Link>
-                    <Link to='/sign-in'><p>Sign in</p></Link>
-                    <button formAction='http://localhost:5000/api/users/sign-up'>Sign Out</button>
+                    {!token && <Link to='/sign-up'><p>Sign Up</p></Link>}
+                    {!token && <Link to='/sign-in'><p>Sign in</p></Link>}
+                    {token && <button onClick={handleSignOut}>Sign Out</button>}
                 </div>
                 <div id='dark-mode-container'>
                     <p>Dark Mode</p>
