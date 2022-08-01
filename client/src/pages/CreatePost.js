@@ -34,7 +34,15 @@ const CreatePost = () => {
             published: published
         })
 
-        fetch('http://localhost:5000/api/posts/create', {method: 'POST', body: formData, headers: {'Content-Type': 'application.json'}})
+        console.log(formData);
+
+        fetch('http://localhost:5000/api/posts/create', {method: 'POST', body: formData, headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}})
+            .then(r => {
+                console.log("done?")
+            })
+            .catch(err => {
+                console.log(err);
+            })
     }
 
     return (
@@ -60,7 +68,7 @@ const CreatePost = () => {
                             </div>
 
                             <div className="form-control">
-                                <input type='checkbox' id='published' name='published' required='true'/>
+                                <input type='checkbox' id='published' name='published' onChange={e => setPublished(e.target.checked)} />
                             </div>
 
                             <div>

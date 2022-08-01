@@ -18,9 +18,14 @@ function SignIn() {
         fetch('http://localhost:5000/api/users/sign-in', {method: 'POST', body: formData, headers:{'Content-Type': 'application/json'}})
             .then(r => r.json())
             .then(data => {
-                localStorage.setItem('user', JSON.stringify(data.user));
-                localStorage.setItem('token', JSON.stringify(data.token));
-                nav("/posts");
+                if (data.user !== undefined || data.token !== undefined) {
+                    localStorage.setItem('user', JSON.stringify(data.user));
+                    localStorage.setItem('token', JSON.stringify(data.token));
+                    nav("/posts");
+                }
+                else {
+                    window.alert("Error, incorrect user/password");
+                }
             });
     }
 

@@ -5,18 +5,24 @@ const {post_update} = require("../controllers/postController");
 
 // Get Posts / Post
 router.get('/', postController.posts_all_get);
-router.get('/post/:id', postController.post_get);
+router.get('/:id', postController.post_get);
 
 // Create Post
-router.post('/create', postController.post_create);
-
+router.post('/create', authenticateToken, postController.post_create);
+// Delete Post
+router.delete('/:id', authenticateToken, postController.post_delete)
 
 // Update Post (Published/Unpublished)
-router.get('/post/:id/update', postController.post_update_get);
-router.put('/post/:id/update', postController.post_update_post);
+router.get('/:id/update', authenticateToken, postController.post_update_get);
+router.put('/:id/update', authenticateToken, postController.post_update_post);
 
-// Delete Post
-router.delete('/post/:id', postController.post_delete)
+function authenticateToken(req, res, next) {
+    const authHeader = req.headers['authorization']
+    const token = authHeader && authHeader.split(' ')[1]
+    if (token == null) return res.sendStatus(401).json({error: "JWT Auth error"});
+    req.token = token.replaceAll('"', '');
+    next();
+}
 
 
 
