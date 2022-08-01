@@ -44,38 +44,29 @@ exports.post_get = (req, res, next) => {
 }
 
 exports.post_create = (req, res, next) => {
-    console.log(req.body);
-    console.log(req.body.text);
-    console.log(req.body.published);
-    console.log(Date.now());
-    console.log(req.user._id);
-    console.log({
-        title: req.body.title,
-        text: req.body.text,
-        likes: 0,
-        edited: false,
-        timestamp: Date.now(),
-        user: req.user._id,
-        published: req.body.published
-    })
-
-    // let newPost = new Post({
-    //     title: req.body.title,
-    //     text: req.body.text,
-    //     likes: 0,
-    //     timestamp: Date.now(),
-    //     user: req.user._id,
-    //     published: req.body.published
-    // })
-
     jwt.verify(req.token, process.env.JWT_KEY, (err, authData) => {
-        if (err) return console.log(err);
-        console.log(req.token);
-        res.json({message: "success"});
-        // newPost.save((err) => {
-        //     if (err) return res.statusCode(401).json({error: err});
-        //     res.redirect('/posts');
+        // console.log('time', Date.now());
+        // console.log({
+        //     title: req.body.title,
+        //     text: req.body.text,
+        //     published: req.body.published
         // })
+        // console.log(authData);
+        // if (err) return console.log(err);
+
+        let newPost = new Post({
+            title: req.body.title,
+            text: req.body.text,
+            likes: 0,
+            timestamp: Date.now(),
+            user: authData._id,
+            published: req.body.published
+        })
+
+        newPost.save((err) => {
+            if (err) return res.statusCode(401).json({error: err});
+            res.redirect('/posts');
+        })
     })
 }
 

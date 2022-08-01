@@ -41,19 +41,24 @@ exports.sign_up_post = (req, res, next) => {
 exports.sign_in_post = function (req, res) {
     passport.authenticate("local", { session: false }, (err, user) => {
         if (err || !user) {
-            return res.json({error: err})
+            return res.status(401).json({
+                message: "Incorrect Username or Password",
+                user,
+            });
         }
 
-        jwt.sign({ _id: user._id, username: user.username }, process.env.JWT_KEY, { expiresIn: "10m" }, (err, token) => {
-            if (err) return console.log(err);
-            res.json({
-                token: token,
-                user: {
-                    _id: user._id,
-                    username: user.username
-                },
-            })
-        });
+        jwt.sign(
+            { _id: user._id, username: user.username },
+            process.env.JWT_KEY,
+            { expiresIn: "10m" },
+            (err, token) => {
+                if (err) return res.status(400).json(err);
+                res.json({
+                    token: token,
+                    user: { _id: user._id, username: user.username },
+                });
+            }
+        );
     })(req, res);
 };
 
