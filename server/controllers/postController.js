@@ -45,14 +45,6 @@ exports.post_get = (req, res, next) => {
 
 exports.post_create = (req, res, next) => {
     jwt.verify(req.token, process.env.JWT_KEY, (err, authData) => {
-        // console.log('time', Date.now());
-        // console.log({
-        //     title: req.body.title,
-        //     text: req.body.text,
-        //     published: req.body.published
-        // })
-        // console.log(authData);
-        // if (err) return console.log(err);
 
         let newPost = new Post({
             title: req.body.title,

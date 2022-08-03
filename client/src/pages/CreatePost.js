@@ -68,7 +68,7 @@ const CreatePost = () => {
                             </div>
 
                             <div className="form-control">
-                                <input type='checkbox' id='published' name='published' onChange={e => setPublished(e.target.checked)} />
+                                <input type='checkbox' id='published' name='published' onChange={e => setPublished(published => !published)} />
                             </div>
 
                             <div>
