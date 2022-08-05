@@ -33,6 +33,7 @@
 .view-post-info {
     padding-left: 20px;
     padding-right: 30px;
+    min-width: 400px;
     display: flex;
     flex-direction: column;
 }

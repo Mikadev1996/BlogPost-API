@@ -28,8 +28,6 @@ const ViewPost = () => {
         fetch(`http://localhost:5000/api/posts/${postid}`)
             .then(r => r.json())
             .then(data => {
-                console.log(data)
-                console.log("----")
                 setPostData(data.post)
                 setComments(data.comments)
             })
@@ -60,7 +58,7 @@ const ViewPost = () => {
                                 {postData.text}
                             </div>
 
-                            <AddComment />
+                            <AddComment postid={postid} handleNewComment={handleNewComment}/>
                         </div>
                     </div>
                     <hr className='hr-comments'/>

@@ -41,7 +41,7 @@ app.use(helmet());
 
 app.use('/api/users', usersRouter);
 app.use('/api/posts', postsRouter);
-app.use('/api/posts/:postid/comments', commentsRouter);
+app.use('/api/comments', commentsRouter);
 
 app.get('*', (req, res, next) => {
     res.sendFile(path.resolve(__dirname, "../client/build", "index.html"))

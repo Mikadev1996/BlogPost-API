@@ -17,15 +17,10 @@ exports.comments_get = (req, res, next) => {
 }
 
 exports.comment_post = (req, res, next) => {
-    // jwt.verify(req.token, process.env.JWT_KEY, (err, authData) => {
-    //     if (err) {
-    //         res.json({error: err});
-    //         return next(err);
-    //     }
     let newComment = new Comment({
         post: req.params.id,
         timestamp: Date.now(),
-        username: req.user.username
+        username: req.body.username
     })
 
     newComment.save((err) => {
@@ -33,7 +28,8 @@ exports.comment_post = (req, res, next) => {
             res.json({error: err});
             return next(err);
         }
-        res.redirect(`/posts/${req.params.id}`)
+        res.json({
+            comment: newComment
+        })
     })
-    // })
 }
