@@ -30,6 +30,7 @@ exports.post_get = (req, res, next) => {
         },
         comments(callback) {
             Comment.find({post: req.params.id})
+                .sort({timestamp: 1})
                 .exec(callback);
         }
     }, (err, results) => {

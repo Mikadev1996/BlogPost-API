@@ -1,6 +1,7 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Nav from "../components/Nav";
 import {useParams} from "react-router-dom";
+import moment from "moment";
 // eslint-disable-next-line
 import ViewPostCss from '../components/styles/ViewPost.css';
 import Comments from "../components/Comments";
@@ -8,8 +9,38 @@ import AddComment from "../components/AddComment";
 
 const ViewPost = () => {
     const { postid } = useParams();
-    const [postData, setPostData] = useState([]);
+    const [postData, setPostData] = useState({
+        title: "",
+        text: "",
+        user: {
+            _id: "",
+            username: "",
+        },
+        timestamp: "",
+    });
     const [comments, setComments] = useState([]);
+
+    useEffect(() => {
+        getPost();
+    }, []);
+
+    const getPost = () => {
+        fetch(`http://localhost:5000/api/posts/${postid}`)
+            .then(r => r.json())
+            .then(data => {
+                console.log(data)
+                console.log("----")
+                setPostData(data.post)
+                setComments(data.comments)
+            })
+            .catch(err => console.log(err));
+    }
+
+    const handleNewComment = (comment) => {
+        setComments(comments => [comment, ...comments])
+    }
+
+
     return (
         <div className='app'>
             <Nav />
@@ -21,19 +52,19 @@ const ViewPost = () => {
 
                         <div className='view-post-info'>
                             <div className='post-header'>
-                                <p>Posted by user/SomeUser123 (Date posted)</p>
-                                <h2>Post Title</h2>
+                                <p>Posted by user/{postData.user.username} {moment(postData.timestamp).format('DD/MM/YYYY')}</p>
+                                <h2>{postData.title}</h2>
                             </div>
 
                             <div className='view-post-text'>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cupiditate, distinctio ducimus ea earum hic, incidunt itaque iure laboriosam laudantium magnam nam optio placeat possimus qui saepe sequi tempora voluptate.
+                                {postData.text}
                             </div>
 
                             <AddComment />
                         </div>
                     </div>
                     <hr className='hr-comments'/>
-                    <Comments postid={postid}/>
+                    <Comments comments={comments}/>
                 </div>
             </main>
             <footer>

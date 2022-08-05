@@ -12,8 +12,9 @@ const Post = ({postid, title, text, user, timestamp}) => {
             <div className='post-likes-container'>
                 Vote
             </div>
-            <Link to={`/posts/${postid}`}>
+
             <div className='post-info'>
+                <Link to={`/posts/${postid}`}>
                 <div className="post-header">
                     <p>Posted by user/{user.username} {dateFormatted} </p>
                     <h2>{title}</h2>
@@ -26,8 +27,9 @@ const Post = ({postid, title, text, user, timestamp}) => {
                 <div className="post-links">
                     <a href={`/posts/${postid}#comment-section-container`}><p>View Comments</p></a>
                 </div>
+                </Link>
             </div>
-            </Link>
+
         </div>
     )
 }
