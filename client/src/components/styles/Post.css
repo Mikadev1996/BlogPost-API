@@ -26,11 +26,12 @@
     background-color: var(--background-color);
     display: flex;
     flex-direction: column;
+    width: calc(100% - 100px);
 }
 
 .post-header p {
     font-size: 12px;
-    opacity: 60%;
+    opacity: 95%;
 }
 
 .post-header h2 {

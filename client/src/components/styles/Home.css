@@ -28,6 +28,10 @@ html[data-theme='dark'] {
   --border-hover: rgba(245, 245, 245, 0.49);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font: 14px "Roboto", Helvetica, Arial, sans-serif;
   color: var(--text-color);

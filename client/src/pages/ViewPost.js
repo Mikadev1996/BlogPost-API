@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Nav from "../components/Nav";
 import {useParams} from "react-router-dom";
 // eslint-disable-next-line
@@ -8,6 +8,8 @@ import AddComment from "../components/AddComment";
 
 const ViewPost = () => {
     const { postid } = useParams();
+    const [postData, setPostData] = useState([]);
+    const [comments, setComments] = useState([]);
     return (
         <div className='app'>
             <Nav />

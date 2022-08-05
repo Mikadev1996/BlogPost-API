@@ -38,7 +38,7 @@ const CreatePost = () => {
 
         fetch('http://localhost:5000/api/posts/create', {method: 'POST', body: formData, headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}})
             .then(r => {
-                console.log("done?")
+                nav("/")
             })
             .catch(err => {
                 console.log(err);

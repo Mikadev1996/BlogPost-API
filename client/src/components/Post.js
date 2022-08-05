@@ -1,9 +1,12 @@
 import React from "react";
+import moment from "moment";
 // eslint-disable-next-line
 import PostCss from './styles/Post.css';
 import {Link} from "react-router-dom";
 
-const Post = ({postid}) => {
+const Post = ({postid, title, text, user, timestamp}) => {
+    const dateFormatted = moment(timestamp).format('DD/MM/YYYY');
+
     return (
         <div className='post-container'>
             <div className='post-likes-container'>
@@ -12,17 +15,16 @@ const Post = ({postid}) => {
             <Link to={`/posts/${postid}`}>
             <div className='post-info'>
                 <div className="post-header">
-                    <p>Posted by user/SomeUser123 (Date posted)</p>
-                    <h2>Post Title</h2>
+                    <p>Posted by user/{user.username} {dateFormatted} </p>
+                    <h2>{title}</h2>
                 </div>
 
                 <div className="post-text">
-                    Post Text
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur cumque ipsam magnam reprehenderit rerum. Amet cum dolorum error fugiat magnam molestiae odio odit, recusandae. Accusamus dignissimos quasi repudiandae voluptatum!
+                    {text}
                 </div>
 
                 <div className="post-links">
-                    <p>x Comments</p>
+                    <a href={`/posts/${postid}#comment-section-container`}><p>View Comments</p></a>
                 </div>
             </div>
             </Link>

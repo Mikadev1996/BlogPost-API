@@ -29,13 +29,12 @@ const PostsList = () => {
                     <CreatePostBar />
                     <div className='post-list-container'>
                         {posts.map((data) => {
-                            return (
-                                <Post postid={data._id}/>
-                            )
+                            if (data.published) {
+                                return (
+                                    <Post postid={data._id} title={data.title} text={data.text} user={data.user} timestamp={data.timestamp}/>
+                                )
+                            }
                         })}
-                        <Post postid='123'/>
-                        <Post postid='456'/>
-                        <Post postid='789'/>
                     </div>
                 </div>
             </main>
