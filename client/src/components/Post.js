@@ -1,11 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import moment from "moment";
 // eslint-disable-next-line
 import PostCss from './styles/Post.css';
 import {Link} from "react-router-dom";
 
-const Post = ({postid, title, text, user, timestamp, likes}) => {
+const Post = ({postid, title, text, user, timestamp, likes, isAuthor, published}) => {
     const dateFormatted = moment(timestamp).format('DD/MM/YYYY');
+
+    const [isPublished, setIsPublished] = useState(published)
+
+    const updatePublishedState = () => {
+        setIsPublished(isPublished => !isPublished);
+    }
 
     return (
         <div className='post-container'>
@@ -28,6 +34,11 @@ const Post = ({postid, title, text, user, timestamp, likes}) => {
                     <a href={`/posts/${postid}#comment-section-container`}><p>View Comments</p></a>
                 </div>
                 </Link>
+
+                {isAuthor &&
+                <div className='post-publish'>
+                    <button onClick={() => updatePublishedState()}>{isPublished ? "Hide Post" : "Publish Post"}</button>
+                </div>}
             </div>
 
         </div>
