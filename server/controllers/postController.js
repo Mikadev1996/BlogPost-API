@@ -20,6 +20,21 @@ exports.posts_all_get = (req, res, next) => {
         })
 }
 
+// Get User Posts
+
+exports.user_posts_get = (req, res, next) => {
+    jwt.verify(req.token, process.env.JWT_KEY, (err, authData) => {
+        Post.find({user: authData._id})
+            .sort({timestamp: -1})
+            .exec((err, list_posts) => {
+                if (err) return res.json({error: err});
+                res.json({
+                    posts: list_posts
+                })
+            })
+    })
+}
+
 // Get Single Posts
 exports.post_get = (req, res, next) => {
     async.parallel({
