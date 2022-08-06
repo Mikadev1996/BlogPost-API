@@ -31,7 +31,7 @@ const PostsList = () => {
                         {posts.map((data) => {
                             if (data.published) {
                                 return (
-                                    <Post postid={data._id} title={data.title} text={data.text} user={data.user} timestamp={data.timestamp}/>
+                                    <Post postid={data._id} title={data.title} text={data.text} user={data.user} timestamp={data.timestamp} likes={data.likes}/>
                                 )
                             }
                         })}

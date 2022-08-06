@@ -16,6 +16,7 @@ const AddComment = ({postid, handleNewComment}) => {
             .then(r => r.json())
             .then(data => {
                 handleNewComment(data.comment)
+                resetTextArea();
                 setText("");
             })
             .catch(err => {
@@ -23,9 +24,14 @@ const AddComment = ({postid, handleNewComment}) => {
             })
     }
 
+    const resetTextArea = () => {
+        const textArea = document.getElementById('text-box');
+        textArea.value = "";
+    }
+
     return (
         <form onSubmit={postComment} className='add-comment-container'>
-            <textarea placeholder='What are your thoughts?' onChange={e => setText(e.target.value)}/>
+            <textarea id='text-box' placeholder='What are your thoughts?' onChange={e => setText(e.target.value)}/>
 
             <div className='submit-comment-container'>
                 <button type='submit' className='submit-comment'>Comment</button>

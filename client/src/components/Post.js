@@ -4,13 +4,13 @@ import moment from "moment";
 import PostCss from './styles/Post.css';
 import {Link} from "react-router-dom";
 
-const Post = ({postid, title, text, user, timestamp}) => {
+const Post = ({postid, title, text, user, timestamp, likes}) => {
     const dateFormatted = moment(timestamp).format('DD/MM/YYYY');
 
     return (
         <div className='post-container'>
             <div className='post-likes-container'>
-                Vote
+                {likes}
             </div>
 
             <div className='post-info'>

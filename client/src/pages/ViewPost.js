@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import Nav from "../components/Nav";
 import {useParams} from "react-router-dom";
 import moment from "moment";
+import likeIcon from '../components/images/white-like-icon.png';
 // eslint-disable-next-line
 import ViewPostCss from '../components/styles/ViewPost.css';
 import Comments from "../components/Comments";
@@ -63,7 +64,10 @@ const ViewPost = () => {
                 <div className='view-post-content-header'></div>
                 <div className='view-post-container'>
                     <div className='view-post-content'>
-                        <div className='view-post-likes-container' onClick={() => updateLikes()}>{postData.likes}</div>
+                        <div className='view-post-likes-container' >
+                            {postData.likes} Likes
+                            <img src={likeIcon}  alt='like' onClick={() => updateLikes()} className='like-icon'/>
+                        </div>
 
                         <div className='view-post-info'>
                             <div className='post-header'>

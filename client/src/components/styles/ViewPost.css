@@ -88,3 +88,9 @@ textarea {
     width: 90%;
     opacity: 90%;
 }
+
+.like-icon {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+}
