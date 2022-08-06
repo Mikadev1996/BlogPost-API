@@ -10,8 +10,6 @@ const AddComment = ({postid, handleNewComment}) => {
             text: text,
         })
 
-        console.log(formData)
-
         fetch(`http://localhost:5000/api/comments/${postid}`, {method: 'POST', body: formData, headers:{'Content-Type': 'application/json'}})
             .then(r => r.json())
             .then(data => {

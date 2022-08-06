@@ -42,7 +42,6 @@ const ViewPost = () => {
     }
 
     const updateLikes = () => {
-
         setPostData(prevState => ({
             ...prevState,
             likes: prevState.likes + 1
@@ -65,7 +64,7 @@ const ViewPost = () => {
                 <div className='view-post-container'>
                     <div className='view-post-content'>
                         <div className='view-post-likes-container' >
-                            {postData.likes} Likes
+                            <p>{postData.likes} Likes</p>
                             <img src={likeIcon}  alt='like' onClick={() => updateLikes()} className='like-icon'/>
                         </div>
 

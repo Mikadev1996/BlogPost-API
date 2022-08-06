@@ -92,6 +92,7 @@ const Nav = () => {
                     {!token && <Link to='/sign-up'><p>Sign Up</p></Link>}
                     {!token && <Link to='/sign-in'><p>Sign in</p></Link>}
                     {token && <button onClick={handleSignOut}>Sign Out</button>}
+                    {token && <Link to='/profile'><p>Your Profile</p></Link>}
                 </div>
                 <div id='dark-mode-container'>
                     <p>Dark Mode</p>

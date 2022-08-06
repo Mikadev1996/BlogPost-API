@@ -10,7 +10,7 @@ const Post = ({postid, title, text, user, timestamp, likes}) => {
     return (
         <div className='post-container'>
             <div className='post-likes-container'>
-                {likes}
+                <p>{likes} Likes</p>
             </div>
 
             <div className='post-info'>
