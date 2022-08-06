@@ -30,7 +30,7 @@ exports.post_get = (req, res, next) => {
         },
         comments(callback) {
             Comment.find({post: req.params.id})
-                .sort({timestamp: 1})
+                .sort({timestamp: -1})
                 .exec(callback);
         }
     }, (err, results) => {
@@ -52,6 +52,7 @@ exports.post_create = (req, res, next) => {
             title: req.body.title,
             text: req.body.text,
             likes: 0,
+            edited: false,
             timestamp: Date.now(),
             user: authData._id,
             published: req.body.published
@@ -106,6 +107,20 @@ exports.post_update_post = (req, res, next) => {
             }
             res.redirect(thePost.url);
         })
+    })
+}
+
+exports.update_likes_post = (req, res, next) => {
+    let newPost = new Post({
+        likes: req.body.likes,
+        _id: req.params.id
+    })
+
+    Post.findByIdAndUpdate(req.params.id, newPost, {}, function (error, thePost) {
+        if (error) {
+            res.json({error: error});
+            return next(error);
+        }
     })
 }
 

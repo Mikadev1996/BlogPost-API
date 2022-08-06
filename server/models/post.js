@@ -6,9 +6,9 @@ const PostSchema = new Schema({
     text: {type: String, required: true},
     likes: {type: Number, required: true, default: 0},
     timestamp: {type: Date, required: true},
-    edited: {type: Boolean, required: true, default: false},
+    edited: {type: Boolean, required: true},
     user: {type: Schema.Types.ObjectId, ref:'User', required: true},
-    published: {type: Boolean, required: true, default: false}
+    published: {type: Boolean, required: true}
 })
 
 PostSchema
