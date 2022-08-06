@@ -40,7 +40,7 @@ function SignIn() {
                     <form onSubmit={handleSignIn}>
                         <div className="form-control">
                             <label htmlFor="username">Username</label>
-                            <input type="text" placeholder="Username" id="username" name='username'onChange={e => setUsername(e.target.value)}/>
+                            <input type="text" placeholder="Username" id="username" name='username' onChange={e => setUsername(e.target.value)}/>
                             <small>Error Message</small>
                         </div>
 

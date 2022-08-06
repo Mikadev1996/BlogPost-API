@@ -20,7 +20,8 @@ exports.comment_post = (req, res, next) => {
     let newComment = new Comment({
         post: req.params.id,
         timestamp: Date.now(),
-        username: req.body.username
+        username: req.body.username,
+        text: req.body.text
     })
 
     newComment.save((err) => {
