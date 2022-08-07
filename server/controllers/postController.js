@@ -21,13 +21,13 @@ exports.posts_all_get = (req, res, next) => {
 }
 
 // Get User Posts
-
 exports.user_posts_get = (req, res, next) => {
     jwt.verify(req.token, process.env.JWT_KEY, (err, authData) => {
+        if (err) return res.json({error: err, message: "JWT Auth Error", test: req.token});
         Post.find({user: authData._id})
             .sort({timestamp: -1})
             .exec((err, list_posts) => {
-                if (err) return res.json({error: err});
+                if (err) return next(err);
                 res.json({
                     posts: list_posts
                 })
@@ -41,6 +41,7 @@ exports.post_get = (req, res, next) => {
         post_details(callback) {
             Post.findById(req.params.id)
                 .populate("user")
+                .sort({timestamp: -1})
                 .exec(callback);
         },
         comments(callback) {

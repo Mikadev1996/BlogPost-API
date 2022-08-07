@@ -4,8 +4,9 @@ const postController = require('../controllers/postController');
 
 // Get Posts / Post
 router.get('/', postController.posts_all_get);
+router.get('/profile', authenticateToken,  postController.user_posts_get);
 router.get('/:id', postController.post_get);
-router.get('/profile', postController.user_posts_get);
+
 
 // Create Post
 router.post('/create', authenticateToken, postController.post_create);
@@ -23,6 +24,7 @@ function authenticateToken(req, res, next) {
     const token = authHeader && authHeader.split(' ')[1]
     if (token == null) return res.sendStatus(401).json({error: "JWT Auth error"});
     req.token = token.replaceAll('"', '');
+    console.log(req.token);
     next();
 }
 
