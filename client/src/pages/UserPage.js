@@ -14,7 +14,8 @@ const UserPage = () => {
         fetch('http://localhost:5000/api/posts/profile', {method: 'GET', headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('token')}`}})
             .then(r => r.json())
             .then(data => {
-                setUserPosts(prevState => [...prevState, data.posts]);
+                console.log(data);
+                setUserPosts(userPosts => [...userPosts, ...data.posts]);
             })
             .catch(err => console.log(err));
     }

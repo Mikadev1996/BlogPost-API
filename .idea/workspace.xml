@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="11122d08-0edf-4565-a3de-8a1118e921f6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/RouteSwitch.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/RouteSwitch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/CreatePost.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/CreatePost.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/PostsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/PostsList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Post.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/UserPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/UserPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/postController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/postController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/posts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +107,7 @@
       <workItem from="1659819754872" duration="21000" />
       <workItem from="1659819916863" duration="898000" />
       <workItem from="1659864928715" duration="5590000" />
-      <workItem from="1659889401015" duration="3844000" />
+      <workItem from="1659889401015" duration="5604000" />
     </task>
     <servers />
   </component>
