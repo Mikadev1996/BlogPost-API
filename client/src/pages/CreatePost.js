@@ -5,28 +5,14 @@ import Nav from "../components/Nav";
 import {useNavigate} from "react-router-dom";
 
 const CreatePost = () => {
-    const [user, setUser] = useState("");
-    const [token, setToken] = useState("");
-
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
     const [published, setPublished] = useState(false);
     let nav = useNavigate();
 
-    useEffect(() => {
-        handleUser();
-    }, []);
-
-    const handleUser = () => {
-        let storageUser = localStorage.getItem('user');
-        let storageToken = localStorage.getItem('token');
-        if (storageUser && storageToken) {
-            setUser(storageUser);
-            setToken(storageToken);
-        }
-    }
-
     const submitPost = (e) => {
+        const token = localStorage.getItem('token');
+
         e.preventDefault();
         const formData = JSON.stringify({
             title: title,

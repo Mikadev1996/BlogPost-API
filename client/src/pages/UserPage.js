@@ -11,7 +11,8 @@ const UserPage = () => {
 
 
     const getProfilePosts = () => {
-        fetch('http://localhost:5000/api/posts/profile', {method: 'GET', headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('token')}`}})
+        const token = localStorage.getItem('token')
+        fetch('http://localhost:5000/api/posts/profile', {method: 'GET', headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}})
             .then(r => r.json())
             .then(data => {
                 console.log(data);
