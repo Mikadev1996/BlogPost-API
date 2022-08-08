@@ -8,7 +8,6 @@ import DarkModeToggleCss from './styles/DarkModeToggle.css';
 
 const Nav = () => {
     const [darkModeEnabled, setDarkModeEnabled] = useState(false)
-    const [user, setUser] = useState("");
     const [token, setToken] = useState("");
 
     let nav = useNavigate();
@@ -63,7 +62,6 @@ const Nav = () => {
             .then(r => {
                 localStorage.removeItem('user');
                 localStorage.removeItem('token');
-                setUser("");
                 setToken("");
                 nav("/");
             })
@@ -73,10 +71,8 @@ const Nav = () => {
     }
 
     const handleUser = () => {
-        let storageUser = localStorage.getItem('user');
         let storageToken = localStorage.getItem('token');
-        if (storageUser && storageToken) {
-            setUser(storageUser);
+        if (storageToken) {
             setToken(storageToken);
         }
     }

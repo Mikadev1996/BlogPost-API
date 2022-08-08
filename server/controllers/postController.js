@@ -7,6 +7,8 @@ const { body, validationResult } = require('express-validator');
 const async = require('async');
 
 
+
+
 // Get All Posts
 exports.posts_all_get = (req, res, next) => {
     Post.find({})
@@ -23,7 +25,7 @@ exports.posts_all_get = (req, res, next) => {
 // Get User Posts
 exports.user_posts_get = (req, res, next) => {
     jwt.verify(req.token, process.env.JWT_KEY, (err, authData) => {
-        if (err) return res.json({error: err, message: "JWT Auth Error", test: req.token});
+        if (err) return res.json({error: err, message: "JWT Auth Error"});
         Post.find({user: authData._id})
             .populate('user', 'username')
             .sort({timestamp: -1})

@@ -3,21 +3,15 @@ const User = require('../models/user');
 const passport = require('passport');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const Post = require("../models/post");
 
 // Current User
 exports.current_user_get = (req, res, next) => {
-    if (req.token) {
+    jwt.verify(req.token, process.env.JWT_KEY, (err, authData) => {
+        if (err) return res.json({error: err, message: "JWT Auth Error"});
         res.json({
-            user: {
-                _id: req.user._id,
-                username: req.user.username
-            },
-            token_data: req.token
+            message: "Token Authenticated"
         })
-        return;
-    }
-    res.json({
-        user: req.user,
     })
 }
 

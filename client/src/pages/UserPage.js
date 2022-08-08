@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from "react";
 import Nav from "../components/Nav";
 import Post from "../components/Post";
+import {useNavigate} from "react-router-dom";
 
 const UserPage = () => {
     const [userPosts, setUserPosts] = useState([]);
+    let nav = useNavigate();
 
     useEffect(() => {
         getProfilePosts();
@@ -15,7 +17,13 @@ const UserPage = () => {
         fetch('http://localhost:5000/api/posts/profile', {method: 'GET', headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}})
             .then(r => r.json())
             .then(data => {
-                setUserPosts(userPosts => [...userPosts, ...data.posts]);
+                if (!data.error) {
+                    setUserPosts(userPosts => [...userPosts, ...data.posts]);
+                    return;
+                }
+                localStorage.removeItem('user');
+                localStorage.removeItem('token');
+                nav("/");
             })
             .catch(err => console.log(err));
     }

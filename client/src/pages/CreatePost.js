@@ -21,8 +21,15 @@ const CreatePost = () => {
         })
 
         fetch('http://localhost:5000/api/posts/create', {method: 'POST', body: formData, headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}})
-            .then(r => {
-                nav("/")
+            .then(r => r.json())
+            .then(data => {
+                if (!data.error) {
+                    nav("/posts")
+                    return;
+                }
+                localStorage.removeItem('user');
+                localStorage.removeItem('token');
+                nav("/");
             })
             .catch(err => {
                 console.log(err);
