@@ -64,7 +64,7 @@ exports.post_get = (req, res, next) => {
 
 exports.post_create = (req, res, next) => {
     jwt.verify(req.token, process.env.JWT_KEY, (err, authData) => {
-
+        if (err) res.json({error: "JWT Authentication Error"});
         let newPost = new Post({
             title: req.body.title,
             text: req.body.text,
@@ -102,6 +102,7 @@ exports.post_create = (req, res, next) => {
 
 exports.post_update_post = (req, res, next) => {
     jwt.verify(req.token, process.env.JWT_KEY, (err, authData) => {
+        if (err) res.json({error: "JWT Authentication Error"});
         let newPost = new Post({
             published: req.body.published,
             _id: req.params.id
