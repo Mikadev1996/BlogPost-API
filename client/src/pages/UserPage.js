@@ -15,7 +15,6 @@ const UserPage = () => {
         fetch('http://localhost:5000/api/posts/profile', {method: 'GET', headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}})
             .then(r => r.json())
             .then(data => {
-                console.log(data);
                 setUserPosts(userPosts => [...userPosts, ...data.posts]);
             })
             .catch(err => console.log(err));
@@ -29,7 +28,7 @@ const UserPage = () => {
                     <div className="post-list-container">
                         {userPosts.map(data => {
                             return (
-                                <Post postid={data._id} title={data.title} text={data.text} user={data.user} timestamp={data.timestamp} likes={data.likes} isAuthor={false} published={data.published}/>
+                                <Post postid={data._id} title={data.title} text={data.text} user={data.user} timestamp={data.timestamp} likes={data.likes} isAuthor={true} published={data.published}/>
                             )
                         })}
                     </div>

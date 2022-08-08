@@ -10,7 +10,20 @@ const Post = ({postid, title, text, user, timestamp, likes, isAuthor, published}
     const [isPublished, setIsPublished] = useState(published)
 
     const updatePublishedState = () => {
-        setIsPublished(isPublished => !isPublished);
+        const token = localStorage.getItem('token')
+
+        const formData = JSON.stringify({
+            published: !isPublished
+        })
+
+        fetch(`http://localhost:5000/api/posts/${postid}/update`, {method: 'PUT',body: formData , headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}})
+            .then(r => r.json())
+            .then(data => {
+                setIsPublished(isPublished => !isPublished);
+            })
+            .catch(err => {
+                console.log(err);
+            })
     }
 
     return (

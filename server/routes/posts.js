@@ -14,7 +14,7 @@ router.post('/create', authenticateToken, postController.post_create);
 router.delete('/:id', authenticateToken, postController.post_delete)
 
 // Update Post (Published/Unpublished)
-router.get('/:id/update', authenticateToken, postController.post_update_get);
+// router.get('/:id/update', authenticateToken, postController.post_update_get);
 router.put('/:id/update', authenticateToken, postController.post_update_post);
 
 router.put('/:id/like', postController.update_likes_post);
@@ -24,7 +24,6 @@ function authenticateToken(req, res, next) {
     const token = authHeader && authHeader.split(' ')[1]
     if (token == null) return res.sendStatus(401).json({error: "JWT Auth error"});
     req.token = token.replaceAll('"', '');
-    console.log(req.token);
     next();
 }
 
