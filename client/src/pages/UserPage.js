@@ -8,7 +8,7 @@ const UserPage = () => {
     let nav = useNavigate();
 
     useEffect(() => {
-        // getProfilePosts();
+        getProfilePosts();
     }, [])
 
 
@@ -34,7 +34,6 @@ const UserPage = () => {
             <div className="content">
                 <div className="container">
                     <div className="post-list-container">
-                        <Post postid='123' title='Test Title' text='Test Text' user='Test User' timestamp={Date.now()} likes='5' isAuthor={true} published={true}/>
                         {userPosts.map(data => {
                             return (
                                 <Post postid={data._id} title={data.title} text={data.text} user={data.user} timestamp={data.timestamp} likes={data.likes} isAuthor={true} published={data.published}/>

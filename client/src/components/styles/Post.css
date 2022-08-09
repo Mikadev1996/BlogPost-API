@@ -39,13 +39,21 @@
     margin: 5px 0;
 }
 
-.post-links-text {
-    color: var(--text-color);
-    opacity: 80%;
+/*.post-links-text {*/
+/*    color: var(--text-color);*/
+/*}*/
+
+/*.post-header-text {*/
+/*    font-size: 12px;*/
+/*    color: var(--text-color);*/
+/*}*/
+
+.post-publish button {
+    width: 100px;
+    border: none;
+    background-color: var(--accent-color);
 }
 
-.post-header-text {
-    font-size: 12px;
-    color: var(--text-color);
-    opacity: 80%;
+.post-publish button:hover {
+    background-color: rgb(5, 110, 71);
 }

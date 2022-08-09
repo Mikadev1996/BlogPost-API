@@ -10,7 +10,7 @@ const PostsList = () => {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        // getPosts();
+        getPosts();
     }, [])
 
     const getPosts = () => {
@@ -28,7 +28,6 @@ const PostsList = () => {
                 <div className='container'>
                     <CreatePostBar />
                     <div className='post-list-container'>
-                        <Post postid='123' title='Test Title' text='Test Text' user='Test User' timestamp={Date.now()} likes='5' isAuthor={true} published={true}/>
                         {posts.map((data) => {
                             if (data.published) {
                                 return (

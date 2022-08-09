@@ -79,7 +79,7 @@ exports.post_create = (req, res, next) => {
 
         newPost.save((err) => {
             if (err) return res.statusCode(401).json({error: err});
-            res.redirect('/posts');
+            res.json({message: "Post Created"})
         })
     })
 }

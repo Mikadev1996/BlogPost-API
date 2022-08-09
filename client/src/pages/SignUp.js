@@ -12,7 +12,7 @@ function SignUp() {
                     <div className="form-header">
                         <h2>Create Account</h2>
                     </div>
-                    <form method='POST' action='http://localhost:5000/api/users/sign-up'>
+                    <form method='POST' action='http://localhost:5000/api/users/sign-up' className='account-form'>
                         <div className="form-control">
                             <label htmlFor="username">Username</label>
                             <input type="text" placeholder="Username" id="username" name='username'/>

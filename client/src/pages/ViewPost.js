@@ -24,7 +24,7 @@ const ViewPost = () => {
 
 
     useEffect(() => {
-        // getPost();
+        getPost();
     }, []);
 
     const getPost = () => {

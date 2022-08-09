@@ -37,7 +37,7 @@ function SignIn() {
                     <div className="form-header">
                         <h2>Sign In</h2>
                     </div>
-                    <form onSubmit={handleSignIn}>
+                    <form onSubmit={handleSignIn} className='account-form'>
                         <div className="form-control">
                             <label htmlFor="username">Username</label>
                             <input type="text" placeholder="Username" id="username" name='username' onChange={e => setUsername(e.target.value)}/>
