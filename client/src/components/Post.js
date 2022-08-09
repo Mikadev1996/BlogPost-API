@@ -35,7 +35,7 @@ const Post = ({postid, title, text, user, timestamp, likes, isAuthor, published}
             <div className='post-info'>
                 <Link to={`/posts/${postid}`}>
                 <div className="post-header">
-                    <p>Posted by user/{user.username} {dateFormatted} </p>
+                    <p className='post-header-text'>Posted by user/{user.username} {dateFormatted} </p>
                     <h2>{title}</h2>
                 </div>
 
@@ -44,7 +44,7 @@ const Post = ({postid, title, text, user, timestamp, likes, isAuthor, published}
                 </div>
 
                 <div className="post-links">
-                    <a href={`/posts/${postid}#comment-section-container`}><p>View Comments</p></a>
+                    <a href={`/posts/${postid}#comment-section-container`}><p className='post-links-text'>View Comments</p></a>
                 </div>
                 </Link>
 

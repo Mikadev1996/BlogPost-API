@@ -58,7 +58,8 @@ const CreatePost = () => {
                                 <textarea placeholder="Text" id="text" maxLength="500" name='text' required='true' onChange={e => setText(e.target.value)} />
                             </div>
 
-                            <div className="form-control">
+                            <div className="form-control form-publish">
+                                Set Public?
                                 <input type='checkbox' id='published' name='published' onChange={e => setPublished(published => !published)} />
                             </div>
 
