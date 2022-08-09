@@ -16,7 +16,7 @@ const Post = ({postid, title, text, user, timestamp, likes, isAuthor, published}
             published: !isPublished
         })
 
-        fetch(`http://localhost:5000/api/posts/${postid}/update`, {method: 'PUT',body: formData , headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}})
+        fetch(`/api/posts/${postid}/update`, {method: 'PUT',body: formData , headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}})
             .then(r => r.json())
             .then(data => {
                 setIsPublished(isPublished => !isPublished);
