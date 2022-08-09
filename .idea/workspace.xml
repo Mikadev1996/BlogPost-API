@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11122d08-0edf-4565-a3de-8a1118e921f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/styles/Comments.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/styles/Comments.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/styles/Form.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/styles/Form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/styles/Post.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/styles/Post.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/CreatePost.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/CreatePost.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/PostsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/PostsList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/SignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/SignIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/SignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/SignUp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/UserPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/UserPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/ViewPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/ViewPost.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/posts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +50,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/components/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -68,6 +62,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Mika\Documents\GitRepos\BlogPost-API" />
       <recent name="C:\Users\Mika\Documents\GitRepos\BlogPost-API\client\src\components\images" />
       <recent name="C:\Users\Mika_Linux\Documents\GitRepos\blogpost-api\server\public" />
     </key>
