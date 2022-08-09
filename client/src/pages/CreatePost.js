@@ -20,7 +20,7 @@ const CreatePost = () => {
             published: published
         })
 
-        fetch('http://localhost:5000/api/posts/create', {method: 'POST', body: formData, headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}})
+        fetch('/api/posts/create', {method: 'POST', body: formData, headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}})
             .then(r => r.json())
             .then(data => {
                 if (!data.error) {
@@ -48,7 +48,7 @@ const CreatePost = () => {
                             <h2>Create Post</h2>
                         </div>
 
-                        <form onSubmit={submitPost}>
+                        <form onSubmit={submitPost} className='account-form'>
                             <div className="form-control">
                                 <label htmlFor="title">Username</label>
                                 <input type="text" placeholder="Title" id="title" name='title' required='true' onChange={e => setTitle(e.target.value)}/>

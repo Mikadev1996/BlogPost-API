@@ -15,7 +15,7 @@ function SignIn() {
             username: username,
             password: password
         });
-        fetch('http://localhost:5000/api/users/sign-in', {method: 'POST', body: formData, headers:{'Content-Type': 'application/json'}})
+        fetch('/api/users/sign-in', {method: 'POST', body: formData, headers:{'Content-Type': 'application/json'}})
             .then(r => r.json())
             .then(data => {
                 if (data.token !== undefined) {

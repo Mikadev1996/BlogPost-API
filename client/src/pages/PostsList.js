@@ -14,7 +14,7 @@ const PostsList = () => {
     }, [])
 
     const getPosts = () => {
-        fetch('http://localhost:5000/api/posts')
+        fetch('/api/posts')
             .then(r => r.json())
             .then(data => {
                 setPosts(posts => [...posts, ...data.posts]);

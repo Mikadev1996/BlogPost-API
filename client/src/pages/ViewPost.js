@@ -28,7 +28,7 @@ const ViewPost = () => {
     }, []);
 
     const getPost = () => {
-        fetch(`http://localhost:5000/api/posts/${postid}`)
+        fetch(`/api/posts/${postid}`)
             .then(r => r.json())
             .then(data => {
                 setPostData(data.post)
