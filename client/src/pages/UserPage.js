@@ -14,7 +14,7 @@ const UserPage = () => {
 
     const getProfilePosts = () => {
         const token = localStorage.getItem('token')
-        fetch('/api/posts/profile', {method: 'GET', headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}})
+        fetch('https://shielded-hamlet-48088.herokuapp.com/api/posts/profile', {method: 'GET', headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}})
             .then(r => r.json())
             .then(data => {
                 if (!data.error) {

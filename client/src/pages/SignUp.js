@@ -12,7 +12,7 @@ function SignUp() {
                     <div className="form-header">
                         <h2>Create Account</h2>
                     </div>
-                    <form method='POST' action='/api/users/sign-up' className='account-form'>
+                    <form method='POST' action='https://shielded-hamlet-48088.herokuapp.com/api/users/sign-up' className='account-form'>
                         <div className="form-control">
                             <label htmlFor="username">Username</label>
                             <input type="text" placeholder="Username" id="username" name='username'/>

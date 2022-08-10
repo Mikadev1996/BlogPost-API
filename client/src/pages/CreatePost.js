@@ -20,7 +20,7 @@ const CreatePost = () => {
             published: published
         })
 
-        fetch('/api/posts/create', {method: 'POST', body: formData, headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}})
+        fetch('https://shielded-hamlet-48088.herokuapp.com/api/posts/create', {method: 'POST', body: formData, headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}})
             .then(r => r.json())
             .then(data => {
                 if (!data.error) {

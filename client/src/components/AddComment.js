@@ -10,7 +10,7 @@ const AddComment = ({postid, handleNewComment}) => {
             text: text,
         })
 
-        fetch(`http://localhost:5000/api/comments/${postid}`, {method: 'POST', body: formData, headers:{'Content-Type': 'application/json'}})
+        fetch(`https://shielded-hamlet-48088.herokuapp.com/api/comments/${postid}`, {method: 'POST', body: formData, headers:{'Content-Type': 'application/json'}})
             .then(r => r.json())
             .then(data => {
                 handleNewComment(data.comment)

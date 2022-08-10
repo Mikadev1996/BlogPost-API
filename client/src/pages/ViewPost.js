@@ -28,7 +28,7 @@ const ViewPost = () => {
     }, []);
 
     const getPost = () => {
-        fetch(`/api/posts/${postid}`)
+        fetch(`https://shielded-hamlet-48088.herokuapp.com/api/posts/${postid}`)
             .then(r => r.json())
             .then(data => {
                 setPostData(data.post)
@@ -50,7 +50,7 @@ const ViewPost = () => {
         const formData = JSON.stringify({
             likes: postData.likes + 1
         })
-        fetch(`http://localhost:5000/api/posts/${postid}/like`, {method: 'PUT', body: formData, headers:{'Content-Type': 'application/json'}})
+        fetch(`https://shielded-hamlet-48088.herokuapp.com/api/posts/${postid}/like`, {method: 'PUT', body: formData, headers:{'Content-Type': 'application/json'}})
             .catch(err => {
                 console.log(err);
             })

@@ -14,7 +14,7 @@ const PostsList = () => {
     }, [])
 
     const getPosts = () => {
-        fetch('/api/posts')
+        fetch('https://shielded-hamlet-48088.herokuapp.com/api/posts')
             .then(r => r.json())
             .then(data => {
                 setPosts(posts => [...posts, ...data.posts]);
