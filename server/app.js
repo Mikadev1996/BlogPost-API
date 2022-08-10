@@ -23,8 +23,7 @@ db.on('error', () => console.error.bind(console, 'MongoDB connection error'));
 
 const app = express();
 
-const corsOptions = {origin: 'http://localhost:5000'};
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
