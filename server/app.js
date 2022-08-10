@@ -23,7 +23,8 @@ db.on('error', () => console.error.bind(console, 'MongoDB connection error'));
 
 const app = express();
 
-app.use(cors());
+const corsOptions = {origin: 'https://shielded-hamlet-48088.herokuapp.com'};
+app.use(cors(corsOptions));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
