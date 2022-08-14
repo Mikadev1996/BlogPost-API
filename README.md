@@ -1,5 +1,7 @@
 <h1>BlogPost-API</h1>
 
+Hosted on Heroku [here](https://shielded-hamlet-48088.herokuapp.com/)
+
 <strong>Technology Stack</strong>
 <hr/>
 <ul>
